@@ -16,6 +16,7 @@ public class FaseCurso {
     private int numSemanas;
     private String tipo;
     private String contenido;
+    private boolean estado;
 
     public FaseCurso() {
         this.codigoCurso = "";
@@ -24,15 +25,18 @@ public class FaseCurso {
         this.numSemanas = 0;
         this.tipo = "";
         this.contenido = "";
+        this.estado = false;
     }
 
-    public FaseCurso(String codigoCurso, String codigoFase, int numHoras, int numSemanas, String tipo, String contenido) {
+    public FaseCurso(String codigoCurso, String codigoFase, int numHoras, int numSemanas, 
+            String tipo, String contenido, boolean estado) {
         this.codigoCurso = codigoCurso;
         this.codigoFase = codigoFase;
         this.numHoras = numHoras;
         this.numSemanas = numSemanas;
         this.tipo = tipo;
         this.contenido = contenido;
+        this.estado = estado;
     }
 
     public String getCodigoCurso() {
@@ -81,5 +85,13 @@ public class FaseCurso {
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
+    }
+    
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

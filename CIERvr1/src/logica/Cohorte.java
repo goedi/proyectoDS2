@@ -18,19 +18,22 @@ public class Cohorte {
     private Date fechaInicio;
     private Date fechaFin;
     private ArrayList<LeaderTeacher> listaLTs;
+    private boolean estado;
 
     public Cohorte() {
         this.codigo = "";
         this.fechaInicio = new Date();
         this.fechaFin = new Date();
         this.listaLTs = new ArrayList<LeaderTeacher>();
+        this.estado = false;
     }
 
-    public Cohorte(String codigo, Date fechaInicio, Date fechaFin, ArrayList listaLTs) {
+    public Cohorte(String codigo, Date fechaInicio, Date fechaFin, ArrayList listaLTs, boolean estado) {
         this.codigo = codigo;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.listaLTs = listaLTs;
+        this.estado = estado;
     }
     
     public String getCodigo() {
@@ -64,5 +67,12 @@ public class Cohorte {
     public void setListaLTs(ArrayList<LeaderTeacher> listaLTs) {
         this.listaLTs = listaLTs;
     }
+    
+    public boolean isEstado() {
+        return estado;
+    }
 
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
 }

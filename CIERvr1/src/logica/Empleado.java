@@ -17,7 +17,8 @@ public class Empleado {
     private String cargo;
     private String direccion;
     private String telefono;
-
+    private boolean estado;
+    
     public Empleado() {
         nombres = "";
         apellidos = "";
@@ -26,9 +27,12 @@ public class Empleado {
         cargo = "";
         direccion = "";
         telefono = "";
+        estado = false;
     }
 
-    public Empleado(String nombres, String apellidos, String cedula, String correo, String cargo, String direccion, String telefono) {
+    public Empleado(String nombres, String apellidos, String cedula, String correo,
+            String cargo, String direccion, String telefono, boolean estado)
+    {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.cedula = cedula;
@@ -36,6 +40,7 @@ public class Empleado {
         this.cargo = cargo;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.estado = estado;
     }
 
     public String getNombres() {
@@ -94,5 +99,11 @@ public class Empleado {
         this.telefono = telefono;
     }
 
-    
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
 }

@@ -5,100 +5,82 @@
  */
 package logica;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  *
  * @author diego
  */
-public class LeaderTeacher {
+public class LeaderTeacher extends Aspirante{
     
-    private String nombre;
-    private String apellido;
-    private String cedula;
-    private String correo;
-    private String direccionDomicilio;
-    private String sedePertenece;
-    private String institucion;
-    private String codDANEInstitucion;
-    private String grado;
-    private String secretariaEducacion;
-    private String municipio;
-    private String areaInscripcion;
-    private String perteneceAprenderPTA;
-    private String usuarioColombiaAprende;
     private Date FechaNacimiento;
     private String sexo;
     private String zonaDeDesempenio;
     private String modalidad;
-    private String nivelEscolaridadDesempenioLavoral;
-    private String gradosDesempeniados;
-    private String areasDeDesempenio;
-    private String nivelEducacionAlcanzado;
-    private String experienciaBasicaPrimaria;
-    private String experienciaBasicaSecundaria;
-    private String experienciaSuperior;
-    private String experienciaPreescolar;
-    private String experienciaRural;
-    private String experienciaUrbano;
-    private String experienciaSectorPublico;
-    private String experienciaSectorPrivado;
+    private ArrayList enfasis;
+    private ArrayList Etnoeducacion;
+    private ArrayList NivelesEscolaridad; 
+    private ArrayList GradosEscolaridad;
+    private ArrayList AreasFormacion;
+    private int NivelEducacion;
+    private int nivelEducacionAlcanzado;
+    private int experienciaBasicaPrimaria;
+    private int experienciaBasicaSecundaria;
+    private int experienciaSuperior;
+    private int experienciaPreescolar;
+    private int experienciaRural;
+    private int experienciaUrbano;
+    private int experienciaSectorPublico;
+    private int experienciaSectorPrivado;
 
     public LeaderTeacher() {
-        this.nombre = "";
-        this.apellido = "";
-        this.cedula = "";
-        this.correo = "";
-        this.direccionDomicilio = "";
-        this.sedePertenece = "";
-        this.institucion = "";
-        this.codDANEInstitucion = "";
-        this.grado = "";
-        this.secretariaEducacion = "";
-        this.municipio = "";
-        this.areaInscripcion = "";
-        this.perteneceAprenderPTA = "";
-        this.usuarioColombiaAprende = "";
+        super();
         this.FechaNacimiento = new Date();
         this.sexo = "";
         this.zonaDeDesempenio = "";
         this.modalidad = "";
-        this.nivelEscolaridadDesempenioLavoral = "";
-        this.gradosDesempeniados = "";
-        this.areasDeDesempenio = "";
-        this.nivelEducacionAlcanzado = "";
-        this.experienciaBasicaPrimaria = "";
-        this.experienciaBasicaSecundaria = "";
-        this.experienciaSuperior = "";
-        this.experienciaPreescolar = "";
-        this.experienciaRural = "";
-        this.experienciaUrbano = "";
-        this.experienciaSectorPublico = "";
-        this.experienciaSectorPrivado = "";
+        this.enfasis = new ArrayList();
+        this.Etnoeducacion = new ArrayList();
+        this.NivelesEscolaridad = new ArrayList();
+        this.GradosEscolaridad = new ArrayList();
+        this.AreasFormacion = new ArrayList();;
+        this.NivelEducacion = 0;
+        this.nivelEducacionAlcanzado = 0;
+        this.experienciaBasicaPrimaria = 0;
+        this.experienciaBasicaSecundaria = 0;
+        this.experienciaSuperior = 0;
+        this.experienciaPreescolar = 0;
+        this.experienciaRural = 0;
+        this.experienciaUrbano = 0;
+        this.experienciaSectorPublico = 0;
+        this.experienciaSectorPrivado = 0;
     }
 
-    public LeaderTeacher(String nombre, String apellido, String cedula, String correo, String direccionDomicilio, String sedePertenece, String institucion, String codDANEInstitucion, String grado, String secretariaEducacion, String municipio, String areaInscripcion, String perteneceAprenderPTA, String usuarioColombiaAprende, Date FechaNacimiento, String sexo, String zonaDeDesempenio, String modalidad, String nivelEscolaridadDesempenioLavoral, String gradosDesempeniados, String areasDeDesempenio, String nivelEducacionAlcanzado, String experienciaBasicaPrimaria, String experienciaBasicaSecundaria, String experienciaSuperior, String experienciaPreescolar, String experienciaRural, String experienciaUrbano, String experienciaSectorPublico, String experienciaSectorPrivado) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
-        this.correo = correo;
-        this.direccionDomicilio = direccionDomicilio;
-        this.sedePertenece = sedePertenece;
-        this.institucion = institucion;
-        this.codDANEInstitucion = codDANEInstitucion;
-        this.grado = grado;
-        this.secretariaEducacion = secretariaEducacion;
-        this.municipio = municipio;
-        this.areaInscripcion = areaInscripcion;
-        this.perteneceAprenderPTA = perteneceAprenderPTA;
-        this.usuarioColombiaAprende = usuarioColombiaAprende;
+    public LeaderTeacher(Date FechaNacimiento, String sexo, String zonaDeDesempenio,
+            String modalidad, ArrayList enfasis, ArrayList Etnoeducacion,
+            ArrayList NivelesEscolaridad, ArrayList GradosEscolaridad, ArrayList AreasFormacion,
+            int NivelEducacion, int nivelEducacionAlcanzado, int experienciaBasicaPrimaria,
+            int experienciaBasicaSecundaria, int experienciaSuperior, int experienciaPreescolar,
+            int experienciaRural, int experienciaUrbano, int experienciaSectorPublico,
+            int experienciaSectorPrivado, String nombre, String apellido, String cedula,
+            String correo, String sedePertenece, String institucion, String codDANEInstitucion,
+            String grado, String secretariaEducacion, String municipio, String areaInscripcion,
+            boolean perteneceAprenderPTA, String usuarioColombiaAprende, boolean estado)
+    {
+        super(nombre, apellido, cedula, correo, sedePertenece,
+                institucion, codDANEInstitucion, grado, secretariaEducacion,
+                municipio, areaInscripcion, perteneceAprenderPTA, usuarioColombiaAprende, estado);
         this.FechaNacimiento = FechaNacimiento;
         this.sexo = sexo;
         this.zonaDeDesempenio = zonaDeDesempenio;
         this.modalidad = modalidad;
-        this.nivelEscolaridadDesempenioLavoral = nivelEscolaridadDesempenioLavoral;
-        this.gradosDesempeniados = gradosDesempeniados;
-        this.areasDeDesempenio = areasDeDesempenio;
+        this.enfasis = enfasis;
+        this.Etnoeducacion = Etnoeducacion;
+        this.NivelesEscolaridad = NivelesEscolaridad;
+        this.GradosEscolaridad = GradosEscolaridad;
+        this.AreasFormacion = AreasFormacion;
+        this.NivelEducacion = NivelEducacion;
         this.nivelEducacionAlcanzado = nivelEducacionAlcanzado;
         this.experienciaBasicaPrimaria = experienciaBasicaPrimaria;
         this.experienciaBasicaSecundaria = experienciaBasicaSecundaria;
@@ -108,118 +90,6 @@ public class LeaderTeacher {
         this.experienciaUrbano = experienciaUrbano;
         this.experienciaSectorPublico = experienciaSectorPublico;
         this.experienciaSectorPrivado = experienciaSectorPrivado;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getDireccionDomicilio() {
-        return direccionDomicilio;
-    }
-
-    public void setDireccionDomicilio(String direccionDomicilio) {
-        this.direccionDomicilio = direccionDomicilio;
-    }
-
-    public String getSedePertenece() {
-        return sedePertenece;
-    }
-
-    public void setSedePertenece(String sedePertenece) {
-        this.sedePertenece = sedePertenece;
-    }
-
-    public String getInstitucion() {
-        return institucion;
-    }
-
-    public void setInstitucion(String institucion) {
-        this.institucion = institucion;
-    }
-
-    public String getCodDANEInstitucion() {
-        return codDANEInstitucion;
-    }
-
-    public void setCodDANEInstitucion(String codDANEInstitucion) {
-        this.codDANEInstitucion = codDANEInstitucion;
-    }
-
-    public String getGrado() {
-        return grado;
-    }
-
-    public void setGrado(String grado) {
-        this.grado = grado;
-    }
-
-    public String getSecretariaEducacion() {
-        return secretariaEducacion;
-    }
-
-    public void setSecretariaEducacion(String secretariaEducacion) {
-        this.secretariaEducacion = secretariaEducacion;
-    }
-
-    public String getMunicipio() {
-        return municipio;
-    }
-
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
-    }
-
-    public String getAreaInscripcion() {
-        return areaInscripcion;
-    }
-
-    public void setAreaInscripcion(String areaInscripcion) {
-        this.areaInscripcion = areaInscripcion;
-    }
-
-    public String getPerteneceAprenderPTA() {
-        return perteneceAprenderPTA;
-    }
-
-    public void setPerteneceAprenderPTA(String perteneceAprenderPTA) {
-        this.perteneceAprenderPTA = perteneceAprenderPTA;
-    }
-
-    public String getUsuarioColombiaAprende() {
-        return usuarioColombiaAprende;
-    }
-
-    public void setUsuarioColombiaAprende(String usuarioColombiaAprende) {
-        this.usuarioColombiaAprende = usuarioColombiaAprende;
     }
 
     public Date getFechaNacimiento() {
@@ -254,101 +124,124 @@ public class LeaderTeacher {
         this.modalidad = modalidad;
     }
 
-    public String getNivelEscolaridadDesempenioLavoral() {
-        return nivelEscolaridadDesempenioLavoral;
+    public ArrayList getEnfasis() {
+        return enfasis;
     }
 
-    public void setNivelEscolaridadDesempenioLavoral(String nivelEscolaridadDesempenioLavoral) {
-        this.nivelEscolaridadDesempenioLavoral = nivelEscolaridadDesempenioLavoral;
+    public void setEnfasis(ArrayList enfasis) {
+        this.enfasis = enfasis;
     }
 
-    public String getGradosDesempeniados() {
-        return gradosDesempeniados;
+    public ArrayList getEtnoeducacion() {
+        return Etnoeducacion;
     }
 
-    public void setGradosDesempeniados(String gradosDesempeniados) {
-        this.gradosDesempeniados = gradosDesempeniados;
+    public void setEtnoeducacion(ArrayList Etnoeducacion) {
+        this.Etnoeducacion = Etnoeducacion;
     }
 
-    public String getAreasDeDesempenio() {
-        return areasDeDesempenio;
+    public ArrayList getNivelesEscolaridad() {
+        return NivelesEscolaridad;
     }
 
-    public void setAreasDeDesempenio(String areasDeDesempenio) {
-        this.areasDeDesempenio = areasDeDesempenio;
+    public void setNivelesEscolaridad(ArrayList NivelesEscolaridad) {
+        this.NivelesEscolaridad = NivelesEscolaridad;
     }
 
-    public String getNivelEducacionAlcanzado() {
+    public ArrayList getGradosEscolaridad() {
+        return GradosEscolaridad;
+    }
+
+    public void setGradosEscolaridad(ArrayList GradosEscolaridad) {
+        this.GradosEscolaridad = GradosEscolaridad;
+    }
+
+    public ArrayList getAreasFormacion() {
+        return AreasFormacion;
+    }
+
+    public void setAreasFormacion(ArrayList AreasFormacion) {
+        this.AreasFormacion = AreasFormacion;
+    }
+
+    public int getNivelEducacion() {
+        return NivelEducacion;
+    }
+
+    public void setNivelEducacion(int NivelEducacion) {
+        this.NivelEducacion = NivelEducacion;
+    }
+
+    public int getNivelEducacionAlcanzado() {
         return nivelEducacionAlcanzado;
     }
 
-    public void setNivelEducacionAlcanzado(String nivelEducacionAlcanzado) {
+    public void setNivelEducacionAlcanzado(int nivelEducacionAlcanzado) {
         this.nivelEducacionAlcanzado = nivelEducacionAlcanzado;
     }
 
-    public String getExperienciaBasicaPrimaria() {
+    public int getExperienciaBasicaPrimaria() {
         return experienciaBasicaPrimaria;
     }
 
-    public void setExperienciaBasicaPrimaria(String experienciaBasicaPrimaria) {
+    public void setExperienciaBasicaPrimaria(int experienciaBasicaPrimaria) {
         this.experienciaBasicaPrimaria = experienciaBasicaPrimaria;
     }
 
-    public String getExperienciaBasicaSecundaria() {
+    public int getExperienciaBasicaSecundaria() {
         return experienciaBasicaSecundaria;
     }
 
-    public void setExperienciaBasicaSecundaria(String experienciaBasicaSecundaria) {
+    public void setExperienciaBasicaSecundaria(int experienciaBasicaSecundaria) {
         this.experienciaBasicaSecundaria = experienciaBasicaSecundaria;
     }
 
-    public String getExperienciaSuperior() {
+    public int getExperienciaSuperior() {
         return experienciaSuperior;
     }
 
-    public void setExperienciaSuperior(String experienciaSuperior) {
+    public void setExperienciaSuperior(int experienciaSuperior) {
         this.experienciaSuperior = experienciaSuperior;
     }
 
-    public String getExperienciaPreescolar() {
+    public int getExperienciaPreescolar() {
         return experienciaPreescolar;
     }
 
-    public void setExperienciaPreescolar(String experienciaPreescolar) {
+    public void setExperienciaPreescolar(int experienciaPreescolar) {
         this.experienciaPreescolar = experienciaPreescolar;
     }
 
-    public String getExperienciaRural() {
+    public int getExperienciaRural() {
         return experienciaRural;
     }
 
-    public void setExperienciaRural(String experienciaRural) {
+    public void setExperienciaRural(int experienciaRural) {
         this.experienciaRural = experienciaRural;
     }
 
-    public String getExperienciaUrbano() {
+    public int getExperienciaUrbano() {
         return experienciaUrbano;
     }
 
-    public void setExperienciaUrbano(String experienciaUrbano) {
+    public void setExperienciaUrbano(int experienciaUrbano) {
         this.experienciaUrbano = experienciaUrbano;
     }
 
-    public String getExperienciaSectorPublico() {
+    public int getExperienciaSectorPublico() {
         return experienciaSectorPublico;
     }
 
-    public void setExperienciaSectorPublico(String experienciaSectorPublico) {
+    public void setExperienciaSectorPublico(int experienciaSectorPublico) {
         this.experienciaSectorPublico = experienciaSectorPublico;
     }
 
-    public String getExperienciaSectorPrivado() {
+    public int getExperienciaSectorPrivado() {
         return experienciaSectorPrivado;
     }
 
-    public void setExperienciaSectorPrivado(String experienciaSectorPrivado) {
+    public void setExperienciaSectorPrivado(int experienciaSectorPrivado) {
         this.experienciaSectorPrivado = experienciaSectorPrivado;
     }
-    
-    
+
 }

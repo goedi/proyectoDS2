@@ -14,19 +14,23 @@ public class FasePractica {
     private String codigoPractica;
     private String nombre;
     private String descripcion;
+    private boolean estado;
 
     public FasePractica() {
         this.codigoFase = "";
         this.codigoPractica = "";
         this.nombre = "";
         this.descripcion = "";
+        this.estado = false;
     }
 
-    public FasePractica(String codigoFase, String codigoPractica, String nombre, String descripcion) {
+    public FasePractica(String codigoFase, String codigoPractica, String nombre, 
+            String descripcion, boolean estado) {
         this.codigoFase = codigoFase;
         this.codigoPractica = codigoPractica;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.estado = estado;
     }
 
     public String getCodigoFase() {
@@ -60,5 +64,11 @@ public class FasePractica {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-   
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
 }

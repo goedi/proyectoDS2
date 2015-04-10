@@ -15,6 +15,7 @@ public class Curso {
     private String Codigo;
     private String Descripcion;
     private String Contenido;
+    private boolean estado;
 
     public Curso() {
         this.nombreCompleto = "";
@@ -22,14 +23,18 @@ public class Curso {
         this.Codigo = "";
         this.Descripcion = "";
         this.Contenido = "";
+        this.estado = false;
     }
 
-    public Curso(String nombreCompleto, String nombreCorto, String Codigo, String Descripcion, String Contenido) {
+    public Curso(String nombreCompleto, String nombreCorto, String Codigo, String Descripcion,
+            String Contenido, boolean estado)
+    {
         this.nombreCompleto = nombreCompleto;
         this.nombreCorto = nombreCorto;
         this.Codigo = Codigo;
         this.Descripcion = Descripcion;
         this.Contenido = Contenido;
+        this.estado = estado;
     }
 
     public String getNombreCompleto() {
@@ -70,5 +75,13 @@ public class Curso {
 
     public void setContenido(String Contenido) {
         this.Contenido = Contenido;
+    }
+    
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

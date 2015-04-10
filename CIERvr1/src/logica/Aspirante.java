@@ -22,8 +22,9 @@ public class Aspirante {
     private String secretariaEducacion;
     private String municipio;
     private String areaInscripcion;
-    private String perteneceAprenderPTA;
+    private boolean perteneceAprenderPTA;
     private String usuarioColombiaAprende;
+    private boolean estado;
 
     public Aspirante() {
         this.nombre = "";
@@ -37,11 +38,16 @@ public class Aspirante {
         this.secretariaEducacion = "";
         this.municipio = "";
         this.areaInscripcion = "";
-        this.perteneceAprenderPTA = "";
+        this.perteneceAprenderPTA = false;
         this.usuarioColombiaAprende = "";
+        this.estado = false;
     }
 
-    public Aspirante(String nombre, String apellido, String cedula, String correo, String sedePertenece, String institucion, String codDANEInstitucion, String grado, String secretariaEducacion, String municipio, String areaInscripcion, String perteneceAprenderPTA, String usuarioColombiaAprende) {
+    public Aspirante(String nombre, String apellido, String cedula, String correo, String sedePertenece, 
+            String institucion, String codDANEInstitucion, String grado, String secretariaEducacion,
+            String municipio, String areaInscripcion, boolean perteneceAprenderPTA,
+            String usuarioColombiaAprende, boolean estado)
+    {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
@@ -55,6 +61,7 @@ public class Aspirante {
         this.areaInscripcion = areaInscripcion;
         this.perteneceAprenderPTA = perteneceAprenderPTA;
         this.usuarioColombiaAprende = usuarioColombiaAprende;
+        this.estado = estado;
     }
 
     public String getNombre() {
@@ -145,11 +152,11 @@ public class Aspirante {
         this.areaInscripcion = areaInscripcion;
     }
 
-    public String getPerteneceAprenderPTA() {
+    public boolean getPerteneceAprenderPTA() {
         return perteneceAprenderPTA;
     }
 
-    public void setPerteneceAprenderPTA(String perteneceAprenderPTA) {
+    public void setPerteneceAprenderPTA(boolean perteneceAprenderPTA) {
         this.perteneceAprenderPTA = perteneceAprenderPTA;
     }
 
@@ -159,5 +166,13 @@ public class Aspirante {
 
     public void setUsuarioColombiaAprende(String usuarioColombiaAprende) {
         this.usuarioColombiaAprende = usuarioColombiaAprende;
+    }
+    
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

@@ -19,9 +19,8 @@ public class MasterTeacher {
     private String pais;
     private String cedula;
     private String RiC;
-    private boolean estado;
-    private Curso curso;    
-    
+    private String curso;
+
     public MasterTeacher() {
         this.nombre = "";
         this.apellido = "";
@@ -30,11 +29,10 @@ public class MasterTeacher {
         this.pais = "";
         this.cedula = "";
         this.RiC = "";
-        this.estado = false;
-        this.curso = null;
+        this.curso = "";
     }
 
-    public MasterTeacher(String Nombre, String Apellido, String Correo, String Ciudad, String Pais, String Cedula, String RiC, boolean estado, Curso Curso) {
+    public MasterTeacher(String Nombre, String Apellido, String Correo, String Ciudad, String Pais, String Cedula, String RiC, String Curso) {
         this.nombre = Nombre;
         this.apellido = Apellido;
         this.correo = Correo;
@@ -42,7 +40,6 @@ public class MasterTeacher {
         this.pais = Pais;
         this.cedula = Cedula;
         this.RiC = RiC;
-        this.estado = estado;
         this.curso = Curso;
     }
 
@@ -101,21 +98,12 @@ public class MasterTeacher {
     public void setRiC(String RiC) {
         this.RiC = RiC;
     }
-    
-    public boolean isEstado() {
-        return estado;
-    }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-    public Curso getCurso() {
+    public String getCurso() {
         return curso;
     }
 
-    public void setCurso(Curso Curso) {
+    public void setCurso(String Curso) {
         this.curso = Curso;
     }
 }
-
