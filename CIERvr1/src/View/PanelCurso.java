@@ -36,57 +36,533 @@ public class PanelCurso extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonIngresar = new javax.swing.JButton();
+        Practica = new javax.swing.JTabbedPane();
+        panelCurso = new javax.swing.JPanel();
+        panelSuperiorCurso = new javax.swing.JPanel();
+        labelNombre = new javax.swing.JLabel();
+        inputNombre = new javax.swing.JTextField();
+        labelNombreCorto = new javax.swing.JLabel();
+        inputNombreCorto = new javax.swing.JTextField();
+        inputCodigo = new javax.swing.JTextField();
+        inputDescripcion = new javax.swing.JTextField();
+        labelDescripcion = new javax.swing.JLabel();
+        labelCodigo = new javax.swing.JLabel();
+        labelContenido = new javax.swing.JLabel();
+        botonCurso = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        inputContenido = new javax.swing.JTextArea();
+        panelInferiorCurso = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableFases = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        panelFase = new javax.swing.JPanel();
+        panelSuperiorFase = new javax.swing.JPanel();
+        labelCodCurso = new javax.swing.JLabel();
+        labelCodFase = new javax.swing.JLabel();
+        labelNumHoras = new javax.swing.JLabel();
+        labelNumSemanas = new javax.swing.JLabel();
+        labelTipo = new javax.swing.JLabel();
+        inputCodigoCurso = new javax.swing.JTextField();
+        inputNumSemanas = new javax.swing.JTextField();
+        inputCodigoFase = new javax.swing.JTextField();
+        inputNumHoras = new javax.swing.JTextField();
+        labelContenidoFase = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        inputContenidoFase = new javax.swing.JTextArea();
+        botonFase = new javax.swing.JButton();
+        inputTipo = new javax.swing.JComboBox();
+        panelInferiorFase = new javax.swing.JPanel();
+        panelPractica = new javax.swing.JPanel();
+        panelSuperiorPractica = new javax.swing.JPanel();
+        inputCodFasePrac = new javax.swing.JLabel();
+        inputCodPrac = new javax.swing.JLabel();
+        inputNomPrac = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        inputDescPrac = new javax.swing.JTextArea();
+        labelDescPrac = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        panelInferiorPractica = new javax.swing.JPanel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(750, 505));
 
-        botonIngresar.setText("CURSOS");
-        botonIngresar.addActionListener(new java.awt.event.ActionListener() {
+        panelCurso.setPreferredSize(new java.awt.Dimension(750, 505));
+
+        panelSuperiorCurso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        labelNombre.setText("Nombre");
+
+        labelNombreCorto.setText("Nombre corto");
+
+        inputNombreCorto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonIngresarActionPerformed(evt);
+                inputNombreCortoActionPerformed(evt);
             }
         });
+
+        inputDescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputDescripcionActionPerformed(evt);
+            }
+        });
+
+        labelDescripcion.setText("Descripción");
+
+        labelCodigo.setText("Codigo");
+
+        labelContenido.setText("Contenido");
+
+        botonCurso.setText("Adicionar Curso");
+
+        inputContenido.setColumns(20);
+        inputContenido.setRows(5);
+        jScrollPane2.setViewportView(inputContenido);
+
+        javax.swing.GroupLayout panelSuperiorCursoLayout = new javax.swing.GroupLayout(panelSuperiorCurso);
+        panelSuperiorCurso.setLayout(panelSuperiorCursoLayout);
+        panelSuperiorCursoLayout.setHorizontalGroup(
+            panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSuperiorCursoLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelNombreCorto)
+                    .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(inputCodigo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                    .addComponent(inputNombreCorto, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inputNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inputDescripcion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSuperiorCursoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonCurso)
+                .addGap(299, 299, 299))
+        );
+        panelSuperiorCursoLayout.setVerticalGroup(
+            panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSuperiorCursoLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelContenido))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelSuperiorCursoLayout.createSequentialGroup()
+                        .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelNombreCorto)
+                            .addComponent(inputNombreCorto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelCodigo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelSuperiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDescripcion)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(botonCurso)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelInferiorCurso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        tableFases.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tableFases);
+
+        jLabel1.setText("Fases");
+
+        javax.swing.GroupLayout panelInferiorCursoLayout = new javax.swing.GroupLayout(panelInferiorCurso);
+        panelInferiorCurso.setLayout(panelInferiorCursoLayout);
+        panelInferiorCursoLayout.setHorizontalGroup(
+            panelInferiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInferiorCursoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelInferiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(110, 110, 110))
+        );
+        panelInferiorCursoLayout.setVerticalGroup(
+            panelInferiorCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInferiorCursoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout panelCursoLayout = new javax.swing.GroupLayout(panelCurso);
+        panelCurso.setLayout(panelCursoLayout);
+        panelCursoLayout.setHorizontalGroup(
+            panelCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelSuperiorCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelInferiorCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelCursoLayout.setVerticalGroup(
+            panelCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCursoLayout.createSequentialGroup()
+                .addComponent(panelSuperiorCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelInferiorCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Practica.addTab("Curso", panelCurso);
+
+        panelSuperiorFase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        labelCodCurso.setText("Codigo Curso");
+
+        labelCodFase.setText("Codigo Fase");
+
+        labelNumHoras.setText("Numero Horas");
+
+        labelNumSemanas.setText("Numero de Semanas");
+
+        labelTipo.setText("Tipo");
+
+        inputCodigoCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputCodigoCursoActionPerformed(evt);
+            }
+        });
+
+        labelContenidoFase.setText("Contenido");
+
+        inputContenidoFase.setColumns(20);
+        inputContenidoFase.setRows(5);
+        jScrollPane3.setViewportView(inputContenidoFase);
+
+        botonFase.setText("Adicionar Fase");
+        botonFase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonFaseActionPerformed(evt);
+            }
+        });
+
+        inputTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Presencial", "Virtual" }));
+
+        javax.swing.GroupLayout panelSuperiorFaseLayout = new javax.swing.GroupLayout(panelSuperiorFase);
+        panelSuperiorFase.setLayout(panelSuperiorFaseLayout);
+        panelSuperiorFaseLayout.setHorizontalGroup(
+            panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSuperiorFaseLayout.createSequentialGroup()
+                .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelSuperiorFaseLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelCodFase, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelCodCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNumHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNumSemanas)
+                            .addComponent(labelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputCodigoFase)
+                            .addComponent(inputCodigoCurso)
+                            .addComponent(inputNumSemanas)
+                            .addComponent(inputNumHoras)
+                            .addComponent(inputTipo, 0, 157, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelContenidoFase, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelSuperiorFaseLayout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(botonFase)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        panelSuperiorFaseLayout.setVerticalGroup(
+            panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSuperiorFaseLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(inputCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelContenidoFase))
+                    .addComponent(labelCodCurso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelSuperiorFaseLayout.createSequentialGroup()
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputCodigoFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelCodFase))
+                        .addGap(6, 6, 6)
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputNumHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNumHoras))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputNumSemanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNumSemanas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelSuperiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTipo)
+                            .addComponent(inputTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane3))
+                .addGap(18, 18, 18)
+                .addComponent(botonFase)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        panelInferiorFase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout panelInferiorFaseLayout = new javax.swing.GroupLayout(panelInferiorFase);
+        panelInferiorFase.setLayout(panelInferiorFaseLayout);
+        panelInferiorFaseLayout.setHorizontalGroup(
+            panelInferiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelInferiorFaseLayout.setVerticalGroup(
+            panelInferiorFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 189, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout panelFaseLayout = new javax.swing.GroupLayout(panelFase);
+        panelFase.setLayout(panelFaseLayout);
+        panelFaseLayout.setHorizontalGroup(
+            panelFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelSuperiorFase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelInferiorFase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelFaseLayout.setVerticalGroup(
+            panelFaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelFaseLayout.createSequentialGroup()
+                .addComponent(panelSuperiorFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelInferiorFase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Practica.addTab("Fase", panelFase);
+
+        panelSuperiorPractica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        inputCodFasePrac.setText("Codigo Fase");
+
+        inputCodPrac.setText("Codigo Practica");
+
+        inputNomPrac.setText("Nombre");
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        inputDescPrac.setColumns(20);
+        inputDescPrac.setRows(5);
+        jScrollPane4.setViewportView(inputDescPrac);
+
+        labelDescPrac.setText("Descripcion");
+
+        jButton1.setText("Adicionar Practica");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout panelSuperiorPracticaLayout = new javax.swing.GroupLayout(panelSuperiorPractica);
+        panelSuperiorPractica.setLayout(panelSuperiorPracticaLayout);
+        panelSuperiorPracticaLayout.setHorizontalGroup(
+            panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                        .addComponent(inputCodPrac)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                        .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputNomPrac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputCodFasePrac, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                        .addGap(34, 34, 34)
+                        .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDescPrac))
+                        .addGap(74, 74, 74))))
+            .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                .addGap(297, 297, 297)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panelSuperiorPracticaLayout.setVerticalGroup(
+            panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                .addGap(38, 53, Short.MAX_VALUE)
+                .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                        .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputCodFasePrac)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputCodPrac)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelSuperiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputNomPrac)))
+                    .addGroup(panelSuperiorPracticaLayout.createSequentialGroup()
+                        .addComponent(labelDescPrac)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        panelInferiorPractica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout panelInferiorPracticaLayout = new javax.swing.GroupLayout(panelInferiorPractica);
+        panelInferiorPractica.setLayout(panelInferiorPracticaLayout);
+        panelInferiorPracticaLayout.setHorizontalGroup(
+            panelInferiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelInferiorPracticaLayout.setVerticalGroup(
+            panelInferiorPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 171, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout panelPracticaLayout = new javax.swing.GroupLayout(panelPractica);
+        panelPractica.setLayout(panelPracticaLayout);
+        panelPracticaLayout.setHorizontalGroup(
+            panelPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelSuperiorPractica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelInferiorPractica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelPracticaLayout.setVerticalGroup(
+            panelPracticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPracticaLayout.createSequentialGroup()
+                .addComponent(panelSuperiorPractica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelInferiorPractica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Practica.addTab("Practica", panelPractica);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(262, 262, 262)
-                .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
+            .addComponent(Practica)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
+            .addComponent(Practica)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
+    private void inputDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDescripcionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonIngresarActionPerformed
+    }//GEN-LAST:event_inputDescripcionActionPerformed
+
+    private void inputNombreCortoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreCortoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNombreCortoActionPerformed
+
+    private void inputCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCodigoCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputCodigoCursoActionPerformed
+
+    private void botonFaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFaseActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonIngresar;
+    private javax.swing.JTabbedPane Practica;
+    private javax.swing.JButton botonCurso;
+    private javax.swing.JButton botonFase;
+    private javax.swing.JLabel inputCodFasePrac;
+    private javax.swing.JLabel inputCodPrac;
+    private javax.swing.JTextField inputCodigo;
+    private javax.swing.JTextField inputCodigoCurso;
+    private javax.swing.JTextField inputCodigoFase;
+    private javax.swing.JTextArea inputContenido;
+    private javax.swing.JTextArea inputContenidoFase;
+    private javax.swing.JTextArea inputDescPrac;
+    private javax.swing.JTextField inputDescripcion;
+    private javax.swing.JLabel inputNomPrac;
+    private javax.swing.JTextField inputNombre;
+    private javax.swing.JTextField inputNombreCorto;
+    private javax.swing.JTextField inputNumHoras;
+    private javax.swing.JTextField inputNumSemanas;
+    private javax.swing.JComboBox inputTipo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel labelCodCurso;
+    private javax.swing.JLabel labelCodFase;
+    private javax.swing.JLabel labelCodigo;
+    private javax.swing.JLabel labelContenido;
+    private javax.swing.JLabel labelContenidoFase;
+    private javax.swing.JLabel labelDescPrac;
+    private javax.swing.JLabel labelDescripcion;
+    private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel labelNombreCorto;
+    private javax.swing.JLabel labelNumHoras;
+    private javax.swing.JLabel labelNumSemanas;
+    private javax.swing.JLabel labelTipo;
+    private javax.swing.JPanel panelCurso;
+    private javax.swing.JPanel panelFase;
+    private javax.swing.JPanel panelInferiorCurso;
+    private javax.swing.JPanel panelInferiorFase;
+    private javax.swing.JPanel panelInferiorPractica;
+    private javax.swing.JPanel panelPractica;
+    private javax.swing.JPanel panelSuperiorCurso;
+    private javax.swing.JPanel panelSuperiorFase;
+    private javax.swing.JPanel panelSuperiorPractica;
+    private javax.swing.JTable tableFases;
     // End of variables declaration//GEN-END:variables
 
             
     
     private void asignarEventos(EventosPanelLogin events){
-        botonIngresar.addActionListener(events);
+        // botonIngresar.addActionListener(events);
     } // Fin del metodo asignarEventos
     
     private class EventosPanelLogin implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == botonIngresar) {
-            }
+            //if (e.getSource() == ) {
+            //}
         }
     
     } // Fin de la clase EventosPanelLogin
