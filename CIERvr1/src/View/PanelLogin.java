@@ -5,9 +5,10 @@
  */
 package View;
 
+import Controllers.ControladorLogin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +27,8 @@ public class PanelLogin extends javax.swing.JPanel {
         // Componentes
         panelAdministrador = new PanelAdministrador();
         
+        // Controlador
+        contLogin = new ControladorLogin();
         
         // Eventos 
         EventosPanelLogin events = new EventosPanelLogin();
@@ -124,14 +127,33 @@ public class PanelLogin extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     private VentanaPrincipal framePadre;
     private PanelAdministrador panelAdministrador;
+    private ControladorLogin contLogin;
             
     private void ingresar(){
         String usuario = inputUsuario.getText();
         String contrasena = new String(inputContrasena.getPassword());
-        // Mandar validacion a la BASE DE DATOS
-        framePadre.actualizarPanelInferior(panelAdministrador);
         
+        String tipoUsuario = contLogin.ingresar(usuario, contrasena);        
+        gestorVentana(tipoUsuario);                
     } // Fin del metodo ingresar
+    
+    
+    private void limpiarCampos() {
+        inputUsuario.setText("");
+        inputContrasena.setText("");
+    }
+    
+    private void gestorVentana (String usuario){
+        switch (usuario) {
+            case "Administrador": {
+                framePadre.actualizarPanelInferior(panelAdministrador);
+            };break;
+            default: {                
+                JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+                limpiarCampos();
+            }                         
+        }; 
+    }
     
     private void asignarEventos(EventosPanelLogin events){
         botonIngresar.addActionListener(events);

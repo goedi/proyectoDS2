@@ -15,21 +15,35 @@ public class Usuario {
     private String password;
     private String tipo;
     private String cedulaUsuario;
+    
+    private static Usuario user; // Singleton
 
-    public Usuario() {
+    private Usuario() {
         login = "";
         password = "";
         tipo = "";
         cedulaUsuario = "";
     }
 
-    public Usuario(String login, String password, String tipo, String cedulaUsuario) {
+//    public Usuario(String login, String password, String tipo, String cedulaUsuario) {
+//        this.login = login;
+//        this.password = password;
+//        this.tipo = tipo;
+//        this.cedulaUsuario = cedulaUsuario;
+//    }
+
+    private Usuario(String login, String password) {
         this.login = login;
         this.password = password;
-        this.tipo = tipo;
-        this.cedulaUsuario = cedulaUsuario;
-    }
-
+    } // Fin del Constructor
+        
+    public static Usuario getInstance(String login, String password) {
+        if (user == null) {
+            user = new Usuario(login, password);
+        } 
+        return user;
+    }        
+    
     public String getLogin() {
         return login;
     }
