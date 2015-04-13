@@ -8,6 +8,7 @@ package logica;
 /**
  *
  * @author diego
+ * Comentario de prueba
  */
 public class Aspirante {
     
