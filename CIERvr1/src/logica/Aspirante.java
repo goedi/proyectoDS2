@@ -5,6 +5,8 @@
  */
 package logica;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author diego
@@ -26,6 +28,7 @@ public class Aspirante {
     private boolean perteneceAprenderPTA;
     private String usuarioColombiaAprende;
     private boolean estado;
+    
 
     public Aspirante() {
         this.nombre = "";
@@ -42,6 +45,7 @@ public class Aspirante {
         this.perteneceAprenderPTA = false;
         this.usuarioColombiaAprende = "";
         this.estado = false;
+        
     }
 
     public Aspirante(String nombre, String apellido, String cedula, String correo, String sedePertenece, 
@@ -175,5 +179,25 @@ public class Aspirante {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+    
+    public ArrayList <String> toArray(){
+        Aspirante aspirante = new Aspirante();
+        ArrayList <String> datosObject = new ArrayList();
+        datosObject.add(getNombre());
+        datosObject.add(getApellido());
+        datosObject.add(getCedula());
+        datosObject.add(getCorreo());
+        datosObject.add(getSedePertenece());
+        datosObject.add(getInstitucion());
+        datosObject.add(getCodDANEInstitucion());
+        datosObject.add(getGrado());
+        datosObject.add(getSecretariaEducacion());
+        datosObject.add(getMunicipio());
+        datosObject.add(getAreaInscripcion());
+        datosObject.add(""+getPerteneceAprenderPTA());
+        datosObject.add(getUsuarioColombiaAprende());
+        datosObject.add(""+isEstado());
+    return datosObject;
     }
 }
