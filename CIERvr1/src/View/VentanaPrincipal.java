@@ -16,13 +16,9 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-<<<<<<< HEAD
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
-=======
-import java.util.Vector;
->>>>>>> 43ee9133adc34d37e6f8be7bdc78a15116ca554a
 import javax.swing.*;
 import Logica.*;
 /**
@@ -37,15 +33,12 @@ public class VentanaPrincipal extends JFrame {
     private JPanel panelInferior;
     private PanelPrincipal panelPrincipal;
     private JButton botonCerrar;
-<<<<<<< HEAD
     
     // ATRIBUTO TEMPORALES SOLO PARA TERCERA ENTRAGA DE PATRONES DE 
     public static Curso objCurso = new Curso(); 
-    public static ArrayList <Usuario> listUsuario = new ArrayList<Usuario>();
-    
-=======
    
->>>>>>> 43ee9133adc34d37e6f8be7bdc78a15116ca554a
+    public static ArrayList <Usuario> listUsuario = new ArrayList<Usuario>();
+   
     /*
       Nombre: Ventana
       Proposito: Constructor de la clase, en el se asignan las caracteristicas
@@ -57,8 +50,7 @@ public class VentanaPrincipal extends JFrame {
         
         // Iniciar componentes panelBase
         panelBase();
-        
-        
+                
         // Caracteristicas Frame
         this.setMinimumSize(new Dimension(1000, 650));
         this.setTitle ("ABC-CIER");
@@ -148,7 +140,6 @@ public class VentanaPrincipal extends JFrame {
                 actualizarPanelInferior(panelPrincipal);
             }
         }
-<<<<<<< HEAD
 
         @Override
         public void windowOpened(WindowEvent e) {
@@ -192,20 +183,6 @@ public class VentanaPrincipal extends JFrame {
         public void windowDeactivated(WindowEvent e) {
         }
     
-    } // Fin de la clase EventosVentanaPrincipal
-=======
+    } // Fin de la clase EventosVentanaPrincipa
         
-    } // Fin de la clase EventosVentanaPrincipal
-    
-    
-
-    
-    public static void main(String args[]) {
-
-        
-        VentanaPrincipal v = new VentanaPrincipal();
-
-
-    }
->>>>>>> 43ee9133adc34d37e6f8be7bdc78a15116ca554a
 } // Fin de la clase VentanaPrincipal
