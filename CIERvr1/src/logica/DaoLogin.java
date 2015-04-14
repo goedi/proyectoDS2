@@ -33,10 +33,10 @@ public class DaoLogin {
             stm = objConexion.getConnetion().createStatement();
             rs = stm.executeQuery(query);
             while (rs.next()) {
-                log = rs.getString(1);
-                pass = rs.getString(4);
-                tipo = rs.getString(2);
-                cedulaUsuario = rs.getString(3);
+                log = rs.getString("login");
+                pass = rs.getString("pass");
+                tipo = rs.getString("tipo");
+                cedulaUsuario = rs.getString("cedulausuario");
             }
             
             user = Usuario.getInstance(log, pass);
