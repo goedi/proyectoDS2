@@ -5,16 +5,20 @@
  */
 package Logica;
 
+import Patrones.Item;
+
 /**
  *
  * @author diego
  */
-public class FasePractica {
+public class FasePractica implements Item {
+    
     private String codigoFase;
     private String codigoPractica;
     private String nombre;
     private String descripcion;
     private boolean estado;
+   
 
     public FasePractica() {
         this.codigoFase = "";
@@ -71,4 +75,19 @@ public class FasePractica {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-}
+
+    @Override
+    public void insertarItem(Item nuevoObjeto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int obtenerItem(Object... list) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void eliminarItem(Object... list) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+} // Fin de la clase FesePractica

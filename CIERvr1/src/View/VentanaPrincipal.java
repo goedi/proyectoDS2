@@ -6,12 +6,19 @@
 
 package View;
 
+import Logica.Curso;
+import Logica.FaseCurso;
+import Logica.FasePractica;
+import Logica.Usuario;
+import Patrones.Item;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.ArrayList;
 import javax.swing.*;
 import Logica.*;
 /**
@@ -26,6 +33,11 @@ public class VentanaPrincipal extends JFrame {
     private JPanel panelInferior;
     private PanelPrincipal panelPrincipal;
     private JButton botonCerrar;
+    
+    // ATRIBUTO TEMPORALES SOLO PARA TERCERA ENTRAGA DE PATRONES DE 
+    public static Curso objCurso = new Curso(); 
+   
+    public static ArrayList <Usuario> listUsuario = new ArrayList<Usuario>();
    
     /*
       Nombre: Ventana
@@ -38,8 +50,7 @@ public class VentanaPrincipal extends JFrame {
         
         // Iniciar componentes panelBase
         panelBase();
-        
-        
+                
         // Caracteristicas Frame
         this.setMinimumSize(new Dimension(1000, 650));
         this.setTitle ("ABC-CIER");
@@ -116,10 +127,11 @@ public class VentanaPrincipal extends JFrame {
     } // Fin del metodo cargarLookAndFeel
 
     private void asignarEvenros (EventosVentanaPrincipal events) {
+        this.addWindowListener(events);
         botonCerrar.addActionListener(events);
     }
     
-    private class EventosVentanaPrincipal implements ActionListener {
+    private class EventosVentanaPrincipal implements ActionListener, WindowListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -128,17 +140,49 @@ public class VentanaPrincipal extends JFrame {
                 actualizarPanelInferior(panelPrincipal);
             }
         }
+
+        @Override
+        public void windowOpened(WindowEvent e) {
+        }
+
+        @Override
+        public void windowClosing(WindowEvent e) {
+            
+            //SOLO PARA TERCERA ENTRAGA DE PATRONES DE DISEÑO            
+            Curso curso = VentanaPrincipal.objCurso;
+            ArrayList <Item> listFasesCurso = curso.getListFases();
+            System.out.println("LISTA DE FASES");
+            for (int x = 0; x <  listFasesCurso.size(); x ++) {
+                FaseCurso faseCurso = (FaseCurso)listFasesCurso.get(x);
+                ArrayList <Item> listaPractica = faseCurso.getListPracticas();
+                System.out.println("Codigo Fase:" + faseCurso.getCodigoFase());
+                System.out.println("Lista de Practicas");
+                for (int y = 0; y < listaPractica.size(); y++) {
+                    FasePractica fasePractica = (FasePractica) listaPractica.get(y);
+                    System.out.println("Codigo Practica " + fasePractica.getCodigoPractica());
+                }
+            }
+        }        
+        @Override
+        public void windowClosed(WindowEvent e) {
+        }
+
+        @Override
+        public void windowIconified(WindowEvent e) {
+        }
+
+        @Override
+        public void windowDeiconified(WindowEvent e) {
+        }
+
+        @Override
+        public void windowActivated(WindowEvent e) {
+        }
+
+        @Override
+        public void windowDeactivated(WindowEvent e) {
+        }
+    
+    } // Fin de la clase EventosVentanaPrincipa
         
-    } // Fin de la clase EventosVentanaPrincipal
-    
-    
-
-    
-    public static void main(String args[]) {
-
-        
-        VentanaPrincipal v = new VentanaPrincipal();
-
-
-    }
 } // Fin de la clase VentanaPrincipal
