@@ -49,11 +49,12 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="botonCohorte" max="32767" attributes="0"/>
-                      <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
-                      <Component id="botonLogin" alignment="1" max="32767" attributes="0"/>
-                      <Component id="botonAspirante" alignment="0" pref="204" max="32767" attributes="0"/>
+                      <Component id="botonEmpleado" max="32767" attributes="0"/>
+                      <Component id="botonReportes" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botonCursos" alignment="0" max="32767" attributes="0"/>
+                      <Component id="boton_2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="boton_1" alignment="0" pref="204" max="32767" attributes="0"/>
+                      <Component id="botonCerrar" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -63,45 +64,55 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                  <Component id="botonCohorte" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="botonEmpleado" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="botonCursos" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="botonReportes" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonAspirante" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="boton_1" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonLogin" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="boton_2" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="botonCerrar" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="botonCohorte">
+        <Component class="javax.swing.JButton" name="botonEmpleado">
           <Properties>
-            <Property name="text" type="java.lang.String" value="COHORTE"/>
+            <Property name="text" type="java.lang.String" value="Empleado"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="botonReportes">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Opcion_3"/>
+            <Property name="text" type="java.lang.String" value="Generar Reportes"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="botonCursos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cursos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="boton_2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Opcion_2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonLogin">
+        <Component class="javax.swing.JButton" name="boton_1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Login"/>
+            <Property name="text" type="java.lang.String" value="Opcion_1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonAspirante">
+        <Component class="javax.swing.JButton" name="botonCerrar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inscripci&#xf3;n Aspirante"/>
+            <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCerrarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

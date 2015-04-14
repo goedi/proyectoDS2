@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/Controllers/ControladorTablas.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/Patrones/ObjectColeccion.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelAspirante.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelPrincipal.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/Patrones/ObjetoIterador.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/VentanaPrincipal.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelLogin.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/TablaModel.java</file>
+            <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelCohorte.java</file>
+        </group>
     </open-files>
 </project-private>

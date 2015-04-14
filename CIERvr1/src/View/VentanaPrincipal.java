@@ -11,7 +11,9 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 import javax.swing.*;
+import logica.*;
 /**
  * Nombre Clase:
  * Funcion: 
@@ -24,7 +26,7 @@ public class VentanaPrincipal extends JFrame {
     private JPanel panelInferior;
     private PanelPrincipal panelPrincipal;
     private JButton botonCerrar;
-    
+   
     /*
       Nombre: Ventana
       Proposito: Constructor de la clase, en el se asignan las caracteristicas
@@ -36,6 +38,7 @@ public class VentanaPrincipal extends JFrame {
         
         // Iniciar componentes panelBase
         panelBase();
+        
         
         // Caracteristicas Frame
         this.setMinimumSize(new Dimension(1000, 650));
@@ -74,7 +77,8 @@ public class VentanaPrincipal extends JFrame {
     private void panelInferior(){
         panelInferior = new JPanel(new FlowLayout());
         // Components
-        panelPrincipal = new PanelPrincipal(this);        
+        panelPrincipal = new PanelPrincipal(this); 
+
         // Add Components
         panelInferior.add(panelPrincipal);        
     }// Fin del metodo panelInferior
@@ -124,10 +128,17 @@ public class VentanaPrincipal extends JFrame {
                 actualizarPanelInferior(panelPrincipal);
             }
         }
-    
+        
     } // Fin de la clase EventosVentanaPrincipal
+    
+    
+
+    
     public static void main(String args[]) {
+
+        
         VentanaPrincipal v = new VentanaPrincipal();
+
 
     }
 } // Fin de la clase VentanaPrincipal

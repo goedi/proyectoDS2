@@ -5,10 +5,14 @@
  */
 package Patrones;
 
+import java.util.ArrayList;
+import java.util.Vector;
+
 /**
  *
  * @author cristian
  */
 public interface ObjetoIterador {
     public boolean hasNext();
+     public Vector next();
 }
