@@ -3,32 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica;
+package Logica;
 
 /**
  *
  * @author diego
  */
 public class Empleado {
-    private String nombres;
-    private String apellidos;
-    private String cedula;
-    private String correo;
-    private String cargo;
-    private String direccion;
-    private String telefono;
-    private boolean estado;
+    
+    protected String nombres;
+    protected String apellidos;
+    protected String cedula;
+    protected String correo;
+    protected String direccion;
+    protected String telefono;
+    protected boolean estado;
     
     public Empleado() {
         nombres = "";
         apellidos = "";
         cedula = "";
         correo = "";
-        cargo = "";
         direccion = "";
         telefono = "";
         estado = false;
-    }
+    } // Fin del Constructor
 
     public Empleado(String nombres, String apellidos, String cedula, String correo,
             String cargo, String direccion, String telefono, boolean estado)
@@ -37,11 +36,10 @@ public class Empleado {
         this.apellidos = apellidos;
         this.cedula = cedula;
         this.correo = correo;
-        this.cargo = cargo;
         this.direccion = direccion;
         this.telefono = telefono;
         this.estado = estado;
-    }
+    } // Fin del Constructor
 
     public String getNombres() {
         return nombres;
@@ -73,14 +71,6 @@ public class Empleado {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
     }
 
     public String getDireccion() {

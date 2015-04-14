@@ -5,9 +5,13 @@
  */
 package View;
 
+import Controllers.ControladorCoordinador;
+import Controllers.ControladorEmpleado;
+import Controllers.ControladorMT;
+import Controllers.ControladorUsuario;
+import Logica.Empleado;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +26,11 @@ public class PanelEmpleado extends javax.swing.JPanel {
     public PanelEmpleado() {
         initComponents();
 
-        
+        // Controlador
+        contEmpleado = new ControladorEmpleado();
+        contUsuario = new ControladorUsuario();
+        contCoordinador = new ControladorCoordinador();
+        contMT = new ControladorMT();
         
         // Eventos 
         EventosPanelLogin events = new EventosPanelLogin();
@@ -165,7 +173,7 @@ public class PanelEmpleado extends javax.swing.JPanel {
 
         labelApellido.setText("Apellido");
 
-        inputTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Master Teacher", "Coordinador" }));
+        inputTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Master Teacher", "Coordinador" }));
         inputTipo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 inputTipoItemStateChanged(evt);
@@ -313,8 +321,10 @@ public class PanelEmpleado extends javax.swing.JPanel {
     private javax.swing.JPanel panelMT;
     private javax.swing.JPanel panelSuperior;
     // End of variables declaration//GEN-END:variables
-
-            
+    private ControladorEmpleado contEmpleado;
+    private ControladorUsuario contUsuario;
+    private ControladorCoordinador contCoordinador;
+    private ControladorMT contMT;
     
     private void asignarEventos(EventosPanelLogin events){
         botonGuardar.addActionListener(events);
@@ -328,25 +338,54 @@ public class PanelEmpleado extends javax.swing.JPanel {
         panelInferior.updateUI();        
     } // Fin del metodo actualizarPanelInferior
     
+    
+    private void crearUsuario(int index){
+        String login = inputLogin.getText();
+        String password = inputContrasena.getText();
+        String tipo = inputTipo.getItemAt(index).toString();
+        String cedulaUsuario = inputCedula.getText();
+        boolean resulado = contUsuario.ingresarUsuario(login, password, tipo, cedulaUsuario);
+        System.out.println("Se ha ingredado el USUARIO"); // BORRAR CUANDO SE IMPLEMENTE EL ORM
+        // MOSTRAR EL RESULTADO DE LA OPERACION CON UN MENSAJE
+    } // Fin del metodo crearUsuario
+    
+    private void crearEmpleado (int index) {
+        String tipo = inputTipo.getItemAt(index).toString();
+        Empleado objEmpleado = contEmpleado.crearEmpleado(tipo);
+        if (tipo.equals("Coordinador")) {
+            contCoordinador.ingresarCoordinador(tipo, tipo, tipo, tipo); // OJO CAMBIAR
+        }
+        if (tipo.equals("Master Teacher")) {
+            contMT.ingresarMT(tipo, tipo, tipo, tipo); // OJO
+        }
+    } // Fin del metodo crearEmpleado
+    
     private class EventosPanelLogin implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == botonGuardar) {
+                int index = inputTipo.getSelectedIndex();
+                crearUsuario(index);
+                crearEmpleado (index);
             }
             
             if (e.getSource() == inputTipo) {
                 int index = inputTipo.getSelectedIndex();
                 if (index == 0) {
-                    actualizarPanelInferior(panelMT);
-                } 
+                    JPanel panelVacio = new JPanel();
+                    actualizarPanelInferior(panelVacio);
+                }
                 if (index == 1) {
+                    crearEmpleado(index);
+                    actualizarPanelInferior(panelMT);
+                    
+                } 
+                if (index == 2) {
+                    crearEmpleado(index);
                     actualizarPanelInferior(panelCoordinador);
                 }
             }
-        }
-    
-    } // Fin de la clase EventosPanelLogin
-       
-    
+        }    
+    } // Fin de la clase EventosPanelLogin           
 } // Fin de la clase PanelLogin

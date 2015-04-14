@@ -3,7 +3,7 @@
  * que solo se pueda crear un usuario Administrador durante la ejecucion de la 
  * aplicacion
  */
-package logica;
+package Logica;
 
 
 /***
