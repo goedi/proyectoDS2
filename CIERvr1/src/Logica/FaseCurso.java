@@ -5,11 +5,16 @@
  */
 package Logica;
 
+import Patrones.Item;
+import java.util.ArrayList;
+
 /**
  *
  * @author diego
  */
-public class FaseCurso {
+public class FaseCurso implements Item{
+
+
     private String codigoCurso;
     private String codigoFase;
     private int numHoras;
@@ -17,6 +22,8 @@ public class FaseCurso {
     private String tipo;
     private String contenido;
     private boolean estado;
+    private ArrayList <Item> listPracticas;
+    
 
     public FaseCurso() {
         this.codigoCurso = "";
@@ -26,6 +33,7 @@ public class FaseCurso {
         this.tipo = "";
         this.contenido = "";
         this.estado = false;
+        this.listPracticas = new ArrayList<Item>();
     }
 
     public FaseCurso(String codigoCurso, String codigoFase, int numHoras, int numSemanas, 
@@ -37,6 +45,7 @@ public class FaseCurso {
         this.tipo = tipo;
         this.contenido = contenido;
         this.estado = estado;
+        this.listPracticas = new ArrayList<Item>();
     }
 
     public String getCodigoCurso() {
@@ -94,4 +103,40 @@ public class FaseCurso {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-}
+    
+    public ArrayList<Item> getListPracticas() {
+        return listPracticas;
+    }
+
+    public void setListPracticas(ArrayList<Item> listPracticas) {
+        this.listPracticas = listPracticas;
+    }
+        
+
+    @Override
+    public void insertarItem(Item nuevoObjeto) {
+        listPracticas.add(nuevoObjeto);
+    }
+
+    @Override
+    public int obtenerItem(Object... list) {
+        String codigoPractica = (String)list[0];
+        int posicion = -1;
+        for (int x = 0; x < listPracticas.size(); x++) {
+            FasePractica fasePractica = (FasePractica)listPracticas.get(x);
+            if (fasePractica.getCodigoFase().equals(codigoPractica)) {
+                posicion = x; 
+            }
+        }
+        return posicion;        
+    }
+
+    @Override
+    public void eliminarItem(Object... list) {
+        String codigoPractica = (String)list[0];
+        int posicion = obtenerItem(codigoPractica);
+        if (posicion != -1) {
+            listPracticas.remove(posicion);
+        }    
+    }    
+} // Fin de la clase FaseCurso

@@ -7,9 +7,11 @@ package View;
 
 import Controllers.ControladorSesion;
 import Logica.Sesion;
+import Patrones.GestorPanelesUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -24,12 +26,10 @@ public class PanelLogin extends javax.swing.JPanel {
         initComponents();
         // Frame Padre
         framePadre = frame;
-        
-        // Componentes
-        panelAdministrador = new PanelAdministrador();
-        
+
         // Controlador
         contSesion = new ControladorSesion();
+        gestorPaneles = new GestorPanelesUsuarios();
         
         // Eventos 
         EventosPanelLogin events = new EventosPanelLogin();
@@ -50,6 +50,8 @@ public class PanelLogin extends javax.swing.JPanel {
         inputUsuario = new javax.swing.JTextField();
         inputContrasena = new javax.swing.JPasswordField();
         botonIngresar = new javax.swing.JButton();
+        inputTipoUsuario = new javax.swing.JComboBox();
+        labelTipoUsuario = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(750, 505));
@@ -73,40 +75,51 @@ public class PanelLogin extends javax.swing.JPanel {
             }
         });
 
+        inputTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Master Teacher", "Leader Teacher", "Coordinador" }));
+
+        labelTipoUsuario.setText("Tipo Usuario");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
+                .addContainerGap(198, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(318, 318, 318))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelUsuario)
-                            .addComponent(labelContrasena))
+                            .addComponent(labelContrasena)
+                            .addComponent(labelTipoUsuario))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputTipoUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(inputUsuario)
-                            .addComponent(inputContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(182, 182, 182))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(318, 318, 318))))
+                            .addComponent(inputContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
+                        .addGap(179, 179, 179))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUsuario)
-                    .addComponent(inputUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelContrasena)
-                    .addComponent(inputContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(86, 86, 86)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelUsuario)
+                            .addComponent(inputUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelContrasena)
+                            .addComponent(inputContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputTipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelTipoUsuario))
+                .addGap(72, 72, 72)
                 .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -122,20 +135,26 @@ public class PanelLogin extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonIngresar;
     private javax.swing.JPasswordField inputContrasena;
+    private javax.swing.JComboBox inputTipoUsuario;
     private javax.swing.JTextField inputUsuario;
     private javax.swing.JLabel labelContrasena;
+    private javax.swing.JLabel labelTipoUsuario;
     private javax.swing.JLabel labelUsuario;
     // End of variables declaration//GEN-END:variables
-    private VentanaPrincipal framePadre;
-    private PanelAdministrador panelAdministrador;
+    private VentanaPrincipal framePadre;    
     private ControladorSesion contSesion;
+    private GestorPanelesUsuarios gestorPaneles;
             
     private void ingresar(){
         String usuario = inputUsuario.getText();
-        String contrasena = new String(inputContrasena.getPassword());
-        Sesion objSesion = contSesion.ingresar(usuario, contrasena); 
-        String tipoUsuario = objSesion.getTipo();
-        gestorVentana(tipoUsuario);                
+        String contrasena = new String(inputContrasena.getPassword());    
+        String tipoUsuario = (String)inputTipoUsuario.getSelectedItem();
+                
+        // SE CREA LA SESION DE USUARIO
+        Sesion objSesion = contSesion.ingresar(usuario, contrasena);    
+        
+        // SE UTILIZA LA FABRICA PARA TRAER EL PANEL SEUGUN EL TIPO DE USUARIO
+        gestorVentana(gestorPaneles.retornarPanelUsuario(tipoUsuario)); 
     } // Fin del metodo ingresar
     
     
@@ -144,17 +163,14 @@ public class PanelLogin extends javax.swing.JPanel {
         inputContrasena.setText("");
     }
     
-    private void gestorVentana (String usuario){
-        switch (usuario) {
-            case "Administrador": {
-                framePadre.actualizarPanelInferior(panelAdministrador);
-            };break;
-            default: {                
-                JOptionPane.showMessageDialog(null, "Usuario no encontrado");
-                limpiarCampos();
-            }                         
-        }; 
-    }
+    private void gestorVentana (JPanel panelUsuario){
+        if (panelUsuario != null){
+            framePadre.actualizarPanelInferior(panelUsuario);
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+            limpiarCampos();        
+        }        
+    } // Fin del metodo gestorVentana 
     
     private void asignarEventos(EventosPanelLogin events){
         botonIngresar.addActionListener(events);
