@@ -9,6 +9,8 @@ package Patrones;
  *
  * @author cristian
  */
-public class TablaColeccion {
+public interface TablaColeccion {
+    public ObjetoIterador iterator();
+    
     
 }

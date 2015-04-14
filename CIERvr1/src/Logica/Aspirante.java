@@ -6,6 +6,7 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  *
@@ -181,9 +182,9 @@ public class Aspirante {
         this.estado = estado;
     }
     
-    public ArrayList <String> toArray(){
+    public Vector toArray(){
         Aspirante aspirante = new Aspirante();
-        ArrayList <String> datosObject = new ArrayList();
+        Vector  datosObject = new Vector();
         datosObject.add(getNombre());
         datosObject.add(getApellido());
         datosObject.add(getCedula());
