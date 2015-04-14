@@ -7,7 +7,7 @@ package Controllers;
 
 import java.util.Vector;
 import Patrones.*;
-import logica.*;
+import Logica.*;
 /**
  *
  * @author cristian

@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 import javax.swing.*;
-import logica.*;
+import Logica.*;
 /**
  * Nombre Clase:
  * Funcion: 

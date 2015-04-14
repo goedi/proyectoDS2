@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica;
+package Logica;
 
 /**
  *
@@ -15,35 +15,21 @@ public class Usuario {
     private String password;
     private String tipo;
     private String cedulaUsuario;
+     
+    public Usuario () {
+        this.login = "";
+        this.password = "";
+        this.tipo = "";
+        this.cedulaUsuario = "";        
+    } // Fin del constructo
     
-    private static Usuario user; // Singleton
-
-    private Usuario() {
-        login = "";
-        password = "";
-        tipo = "";
-        cedulaUsuario = "";
-    }
-
-//    public Usuario(String login, String password, String tipo, String cedulaUsuario) {
-//        this.login = login;
-//        this.password = password;
-//        this.tipo = tipo;
-//        this.cedulaUsuario = cedulaUsuario;
-//    }
-
-    private Usuario(String login, String password) {
+    public Usuario(String login, String password, String tipo, String cedulaUsuario) {
         this.login = login;
         this.password = password;
-    } // Fin del Constructor
-        
-    public static Usuario getInstance(String login, String password) {
-        if (user == null) {
-            user = new Usuario(login, password);
-        } 
-        return user;
-    }        
-    
+        this.tipo = tipo;
+        this.cedulaUsuario = cedulaUsuario;
+    }    
+
     public String getLogin() {
         return login;
     }
@@ -76,4 +62,4 @@ public class Usuario {
         this.cedulaUsuario = cedulaUsuario;
     }
     
-}
+} // Fin de la clase Usuario

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/Controllers/ControladorTablas.java</file>
             <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/Patrones/ObjectColeccion.java</file>
             <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelAspirante.java</file>
@@ -12,6 +13,10 @@
             <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelLogin.java</file>
             <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/TablaModel.java</file>
             <file>file:/home/cristian/ProyectosGitHub/CIER/proyectoDS2/CIERvr1/src/View/PanelCohorte.java</file>
+=======
+            <file>file:/home/oscar/Escritorio/PROYECTO_DESARROLLO_II/Project_git/proyectoDS2/CIERvr1/src/View/PanelEmpleado.java</file>
+            <file>file:/home/oscar/Escritorio/PROYECTO_DESARROLLO_II/Project_git/proyectoDS2/CIERvr1/src/View/PanelLogin.java</file>
+>>>>>>> 8adf1dd1881c8fd583041ef805b05997119678fa
         </group>
     </open-files>
 </project-private>

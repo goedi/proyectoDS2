@@ -5,7 +5,8 @@
  */
 package View;
 
-import Controllers.ControladorLogin;
+import Controllers.ControladorSesion;
+import Logica.Sesion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -28,7 +29,7 @@ public class PanelLogin extends javax.swing.JPanel {
         panelAdministrador = new PanelAdministrador();
         
         // Controlador
-        contLogin = new ControladorLogin();
+        contSesion = new ControladorSesion();
         
         // Eventos 
         EventosPanelLogin events = new EventosPanelLogin();
@@ -127,13 +128,13 @@ public class PanelLogin extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     private VentanaPrincipal framePadre;
     private PanelAdministrador panelAdministrador;
-    private ControladorLogin contLogin;
+    private ControladorSesion contSesion;
             
     private void ingresar(){
         String usuario = inputUsuario.getText();
         String contrasena = new String(inputContrasena.getPassword());
-        
-        String tipoUsuario = contLogin.ingresar(usuario, contrasena);        
+        Sesion objSesion = contSesion.ingresar(usuario, contrasena); 
+        String tipoUsuario = objSesion.getTipo();
         gestorVentana(tipoUsuario);                
     } // Fin del metodo ingresar
     
