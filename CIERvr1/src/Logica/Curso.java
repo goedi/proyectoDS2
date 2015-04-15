@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class Curso implements Item{
     private String nombreCompleto;
     private String nombreCorto;
-    private String Codigo;
-    private String Descripcion;
-    private String Contenido;
+    private String codigo;
+    private String descripcion;
+    private String contenido;
     private boolean estado;
 
     private ArrayList <Item> listFases;
@@ -28,9 +28,9 @@ public class Curso implements Item{
     public Curso() {
         this.nombreCompleto = "";
         this.nombreCorto = "";
-        this.Codigo = "";
-        this.Descripcion = "";
-        this.Contenido = "";
+        this.codigo = "";
+        this.descripcion = "";
+        this.contenido = "";
         this.estado = false;
         this.listFases = new ArrayList <Item>();
     }
@@ -40,9 +40,9 @@ public class Curso implements Item{
     {
         this.nombreCompleto = nombreCompleto;
         this.nombreCorto = nombreCorto;
-        this.Codigo = Codigo;
-        this.Descripcion = Descripcion;
-        this.Contenido = Contenido;
+        this.codigo = Codigo;
+        this.descripcion = Descripcion;
+        this.contenido = Contenido;
         this.estado = estado;
         this.listFases = new ArrayList <Item>();
     }
@@ -64,27 +64,27 @@ public class Curso implements Item{
     }
 
     public String getCodigo() {
-        return Codigo;
+        return codigo;
     }
 
     public void setCodigo(String Codigo) {
-        this.Codigo = Codigo;
+        this.codigo = Codigo;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String Descripcion) {
-        this.Descripcion = Descripcion;
+        this.descripcion = Descripcion;
     }
 
     public String getContenido() {
-        return Contenido;
+        return contenido;
     }
 
     public void setContenido(String Contenido) {
-        this.Contenido = Contenido;
+        this.contenido = Contenido;
     }
     
     public boolean isEstado() {

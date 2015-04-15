@@ -24,10 +24,7 @@ public class PanelCoordinador extends javax.swing.JPanel {
         initComponents();       
 
         // Componentes
-        panelEmpleado = new PanelEmpleado();
-        panelCurso = new PanelCurso();
-        panelReporte = new PanelReporte();
-        
+
         // Eventos
         EventosPanelCoordinador events = new EventosPanelCoordinador();
         asignarEventos(events);
@@ -94,9 +91,7 @@ public class PanelCoordinador extends javax.swing.JPanel {
     private javax.swing.JPanel panelDer;
     private javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
-    private PanelEmpleado panelEmpleado;
-    private PanelCurso panelCurso;
-    private PanelReporte panelReporte;
+
 
     /**
      * Nombre: actualizarPaneDer
