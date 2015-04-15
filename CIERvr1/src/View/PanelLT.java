@@ -1,5 +1,5 @@
 /** 
- * Nombre del Archivo: PanelCoordinador.java
+ * Nombre del Archivo: PanelLT.java
  * Autores: JULIAN GARCIA RICO (1225435) 
  *          DIEGO FERNANDO BEDOYA (1327749) 
  *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
@@ -15,21 +15,22 @@ import javax.swing.JPanel;
  * Esta se usa para el implementar el patron FABRICA
  * Representa un Producto Concreto
  */
-public class PanelCoordinador extends javax.swing.JPanel {
+public class PanelLT extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelPrincipal
      */
-    public PanelCoordinador() {
+    public PanelLT() {
         initComponents();       
-
+        
         // Componentes
         panelEmpleado = new PanelEmpleado();
         panelCurso = new PanelCurso();
         panelReporte = new PanelReporte();
+        // panelPrincipal = new PanelPrincipal();
         
         // Eventos
-        EventosPanelCoordinador events = new EventosPanelCoordinador();
+        EventosPanelLt events = new EventosPanelLt();
         asignarEventos(events);
     }
 
@@ -49,21 +50,21 @@ public class PanelCoordinador extends javax.swing.JPanel {
         panelIzq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel1.setText("PANEL COOR");
+        jLabel1.setText("PANEL LT");
 
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
         panelIzq.setLayout(panelIzqLayout);
         panelIzqLayout.setHorizontalGroup(
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIzqLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         panelIzqLayout.setVerticalGroup(
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIzqLayout.createSequentialGroup()
-                .addGap(148, 148, 148)
+                .addGap(147, 147, 147)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -110,11 +111,11 @@ public class PanelCoordinador extends javax.swing.JPanel {
         panelDer.updateUI();
     } // Fin del metodo actualizarPaneDer
     
-    private void asignarEventos(EventosPanelCoordinador events) {      
+    private void asignarEventos(EventosPanelLt events) {      
         
     } // Fin del metodo asignarEventos
     
-    private class EventosPanelCoordinador implements ActionListener{
+    private class EventosPanelLt implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
         }

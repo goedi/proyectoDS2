@@ -1,9 +1,10 @@
 /** 
- * Nombre del Archivo: VentanaPrincipal.java 
- * Fecha de Creacion: 15/11/2014 
- * Autor: Oscar Steven Romero Beron - 1326750 
+ * Nombre del Archivo: Item.java
+ * Autores: JULIAN GARCIA RICO (1225435) 
+ *          DIEGO FERNANDO BEDOYA (1327749) 
+ *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
+ *          OSCAR STEVEN ROMERO BERON (1326750) 
  */
-
 package View;
 
 import Logica.Curso;
@@ -162,6 +163,9 @@ public class VentanaPrincipal extends JFrame {
                     System.out.println("Codigo Practica " + fasePractica.getCodigoPractica());
                 }
             }
+            
+            //SOLO PARA TERCERA ENTRAGA DE PATRONES DE DISEÑO   
+            System.out.println("Cantidad de Objetos Sesion Creados-> " + Sesion.cantObjetoSesion);
         }        
         @Override
         public void windowClosed(WindowEvent e) {

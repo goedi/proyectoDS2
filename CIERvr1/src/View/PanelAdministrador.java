@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ * Nombre del Archivo: PanelAdministrador.java
+ * Autores: JULIAN GARCIA RICO (1225435) 
+ *          DIEGO FERNANDO BEDOYA (1327749) 
+ *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
+ *          OSCAR STEVEN ROMERO BERON (1326750) 
  */
 package View;
 
@@ -10,29 +12,24 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
- *
- * @author oscar
+ * Esta se usa para el implementar el patron FABRICA
+ * Representa un Producto Concreto
  */
 public class PanelAdministrador extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelPrincipal
-     * @param frame
      */
     public PanelAdministrador() {
         initComponents();       
         
-        // Frame Padre
-        //framePadre = frame;
-        
         // Componentes
         panelEmpleado = new PanelEmpleado();
         panelCurso = new PanelCurso();
-        panelReporte = new PanelReporte();
-        // panelPrincipal = new PanelPrincipal();
+        panelReporte = new PanelReporte();        
         
         // Eventos
-        EventosPanelPrincipal events = new EventosPanelPrincipal();
+        EventosPanelAdministrador events = new EventosPanelAdministrador();
         asignarEventos(events);
     }
 
@@ -51,7 +48,6 @@ public class PanelAdministrador extends javax.swing.JPanel {
         botonCursos = new javax.swing.JButton();
         boton_2 = new javax.swing.JButton();
         boton_1 = new javax.swing.JButton();
-        botonCerrar = new javax.swing.JButton();
         panelDer = new javax.swing.JPanel();
 
         panelIzq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -66,13 +62,6 @@ public class PanelAdministrador extends javax.swing.JPanel {
 
         boton_1.setText("Opcion_1");
 
-        botonCerrar.setText("Cerrar Sesion");
-        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCerrarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
         panelIzq.setLayout(panelIzqLayout);
         panelIzqLayout.setHorizontalGroup(
@@ -84,8 +73,7 @@ public class PanelAdministrador extends javax.swing.JPanel {
                     .addComponent(botonReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boton_2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(boton_1, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                    .addComponent(botonCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(boton_1, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panelIzqLayout.setVerticalGroup(
@@ -101,8 +89,6 @@ public class PanelAdministrador extends javax.swing.JPanel {
                 .addComponent(boton_1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boton_2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -126,13 +112,8 @@ public class PanelAdministrador extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCerrarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCerrar;
     private javax.swing.JButton botonCursos;
     private javax.swing.JButton botonEmpleado;
     private javax.swing.JButton botonReportes;
@@ -157,14 +138,13 @@ public class PanelAdministrador extends javax.swing.JPanel {
         panelDer.updateUI();
     } // Fin del metodo actualizarPaneDer
     
-    private void asignarEventos(EventosPanelPrincipal events) {      
+    private void asignarEventos(EventosPanelAdministrador events) {      
         botonCursos.addActionListener(events);
         botonEmpleado.addActionListener(events);
         botonReportes.addActionListener(events);
-        botonCerrar.addActionListener(events);
     } // Fin del metodo asignarEventos
     
-    private class EventosPanelPrincipal implements ActionListener{
+    private class EventosPanelAdministrador implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == botonEmpleado) {
@@ -175,9 +155,6 @@ public class PanelAdministrador extends javax.swing.JPanel {
             }
             if (e.getSource() == botonReportes) {
                 actualizarPaneDer(panelReporte);
-            }
-            if (e.getSource() == botonCerrar) {
-                // framePadre.actualizarPanelInferior(panelPrincipal);
             }
         }
     } // Fin de la clase EventosPanelPrincipal

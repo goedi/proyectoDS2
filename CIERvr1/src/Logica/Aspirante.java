@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ * Nombre del Archivo: Item.java
+ * Autores: JULIAN GARCIA RICO (1225435) 
+ *          DIEGO FERNANDO BEDOYA (1327749) 
+ *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
+ *          OSCAR STEVEN ROMERO BERON (1326750) 
  */
 package Logica;
 
 import java.util.ArrayList;
 import java.util.Vector;
 
-/**
- *
- * @author diego
- * Comentario de prueba
- */
 public class Aspirante {
     
     private String nombre;

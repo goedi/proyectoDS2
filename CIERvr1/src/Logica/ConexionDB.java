@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ * Nombre del Archivo: Item.java
+ * Autores: JULIAN GARCIA RICO (1225435) 
+ *          DIEGO FERNANDO BEDOYA (1327749) 
+ *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
+ *          OSCAR STEVEN ROMERO BERON (1326750) 
  */
 package Logica;
 
@@ -9,10 +11,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author oscar
- */
 public class ConexionDB {
 
 //    private final String URL_BASEDATOS = "jdbc:postgresql://ec2-107-20-159-103.compute-1.amazonaws.com:5432/dbikdp8uvuqigr?user=itrvknmdhrrwce&password=O7nb2g-81YaZV9v4PJx-g0syGS&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";

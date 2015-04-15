@@ -54,7 +54,6 @@
                       <Component id="botonCursos" alignment="0" max="32767" attributes="0"/>
                       <Component id="boton_2" alignment="1" max="32767" attributes="0"/>
                       <Component id="boton_1" alignment="0" pref="204" max="32767" attributes="0"/>
-                      <Component id="botonCerrar" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -73,8 +72,6 @@
                   <Component id="boton_1" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="boton_2" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonCerrar" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -105,14 +102,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Opcion_1"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="botonCerrar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCerrarActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

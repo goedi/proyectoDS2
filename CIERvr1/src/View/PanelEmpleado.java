@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ * Nombre del Archivo: Item.java
+ * Autores: JULIAN GARCIA RICO (1225435) 
+ *          DIEGO FERNANDO BEDOYA (1327749) 
+ *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
+ *          OSCAR STEVEN ROMERO BERON (1326750) 
  */
 package View;
 
-import Controllers.ControladorCoordinador;
-import Controllers.ControladorEmpleado;
-import Controllers.ControladorMT;
 import Controllers.ControladorUsuario;
-import Logica.Empleado;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -27,10 +25,7 @@ public class PanelEmpleado extends javax.swing.JPanel {
         initComponents();
 
         // Controlador
-        contEmpleado = new ControladorEmpleado();
         contUsuario = new ControladorUsuario();
-        contCoordinador = new ControladorCoordinador();
-        contMT = new ControladorMT();
         
         // Eventos 
         EventosPanelLogin events = new EventosPanelLogin();
@@ -321,10 +316,8 @@ public class PanelEmpleado extends javax.swing.JPanel {
     private javax.swing.JPanel panelMT;
     private javax.swing.JPanel panelSuperior;
     // End of variables declaration//GEN-END:variables
-    private ControladorEmpleado contEmpleado;
+
     private ControladorUsuario contUsuario;
-    private ControladorCoordinador contCoordinador;
-    private ControladorMT contMT;
     
     private void asignarEventos(EventosPanelLogin events){
         botonGuardar.addActionListener(events);
@@ -350,14 +343,6 @@ public class PanelEmpleado extends javax.swing.JPanel {
     } // Fin del metodo crearUsuario
     
     private void crearEmpleado (int index) {
-        String tipo = inputTipo.getItemAt(index).toString();
-        Empleado objEmpleado = contEmpleado.crearEmpleado(tipo);
-        if (tipo.equals("Coordinador")) {
-            contCoordinador.ingresarCoordinador(tipo, tipo, tipo, tipo); // OJO CAMBIAR
-        }
-        if (tipo.equals("Master Teacher")) {
-            contMT.ingresarMT(tipo, tipo, tipo, tipo); // OJO
-        }
     } // Fin del metodo crearEmpleado
     
     private class EventosPanelLogin implements ActionListener {
@@ -366,8 +351,7 @@ public class PanelEmpleado extends javax.swing.JPanel {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == botonGuardar) {
                 int index = inputTipo.getSelectedIndex();
-                crearUsuario(index);
-                crearEmpleado (index);
+                crearUsuario(index);               
             }
             
             if (e.getSource() == inputTipo) {

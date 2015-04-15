@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ * Nombre del Archivo: PanelCurso.java
+ * Autores: JULIAN GARCIA RICO (1225435) 
+ *          DIEGO FERNANDO BEDOYA (1327749) 
+ *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
+ *          OSCAR STEVEN ROMERO BERON (1326750) 
  */
 package View;
 
@@ -12,11 +14,9 @@ import Patrones.Item;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JFrame;
 
 /**
- *
- * @author oscar
+ * Esta clase es cliente de Curso (Patron de diseño Composite) 
  */
 public class PanelCurso extends javax.swing.JPanel {
 
