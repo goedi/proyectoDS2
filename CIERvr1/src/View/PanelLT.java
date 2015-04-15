@@ -24,10 +24,7 @@ public class PanelLT extends javax.swing.JPanel {
         initComponents();       
         
         // Componentes
-        panelEmpleado = new PanelEmpleado();
-        panelCurso = new PanelCurso();
-        panelReporte = new PanelReporte();
-        // panelPrincipal = new PanelPrincipal();
+        
         
         // Eventos
         EventosPanelLt events = new EventosPanelLt();
@@ -95,9 +92,7 @@ public class PanelLT extends javax.swing.JPanel {
     private javax.swing.JPanel panelDer;
     private javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
-    private PanelEmpleado panelEmpleado;
-    private PanelCurso panelCurso;
-    private PanelReporte panelReporte;
+
 
     /**
      * Nombre: actualizarPaneDer
