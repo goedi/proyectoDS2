@@ -38,58 +38,46 @@ public class PanelReporte extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonIngresar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(750, 505));
 
-        botonIngresar.setText("REPORTES");
-        botonIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonIngresarActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("REPORTES");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addGap(291, 291, 291)
+                .addComponent(jLabel1)
+                .addContainerGap(385, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addGap(183, 183, 183)
+                .addComponent(jLabel1)
+                .addContainerGap(303, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonIngresarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonIngresar;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
             
 
     private void asignarEventos(EventosPanelLogin events){
-        botonIngresar.addActionListener(events);
+        
     } // Fin del metodo asignarEventos
     
     private class EventosPanelLogin implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == botonIngresar) {
-
-            }
         }
     
     } // Fin de la clase EventosPanelLogin

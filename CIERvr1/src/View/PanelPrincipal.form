@@ -49,7 +49,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="botonCohorte" max="32767" attributes="0"/>
+                      <Component id="opcion_1" max="32767" attributes="0"/>
                       <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                       <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
                       <Component id="botonLogin" alignment="1" max="32767" attributes="0"/>
@@ -63,7 +63,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                  <Component id="botonCohorte" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="opcion_1" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton3" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -78,10 +78,13 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="botonCohorte">
+        <Component class="javax.swing.JButton" name="opcion_1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="COHORTE"/>
+            <Property name="text" type="java.lang.String" value="Opcion_1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcion_1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>

@@ -7,6 +7,8 @@
  */
 package View;
 
+import Patrones.FabricaPanelesUsuario;
+import Patrones.FactoryIF;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -28,10 +30,8 @@ public class PanelPrincipal extends javax.swing.JPanel {
         
         // Componentes
         panelLogin = new PanelLogin(framePadre);
-        panelAspirante = new PanelAspirante();
-        panelCohorte = new PanelCohorte();
+        fabricaPaneles = new FabricaPanelesUsuario();
         
-//        Datos = new Vector();
         // Eventos
         EventosPanelPrincipal events = new EventosPanelPrincipal();
         asignarEventos(events);
@@ -47,7 +47,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
     private void initComponents() {
 
         panelIzq = new javax.swing.JPanel();
-        botonCohorte = new javax.swing.JButton();
+        opcion_1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         botonLogin = new javax.swing.JButton();
@@ -56,7 +56,12 @@ public class PanelPrincipal extends javax.swing.JPanel {
 
         panelIzq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        botonCohorte.setText("COHORTE");
+        opcion_1.setText("Opcion_1");
+        opcion_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcion_1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Opcion_3");
 
@@ -73,7 +78,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
             .addGroup(panelIzqLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonCohorte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(opcion_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -84,7 +89,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIzqLayout.createSequentialGroup()
                 .addGap(109, 109, 109)
-                .addComponent(botonCohorte, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(opcion_1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -116,27 +121,24 @@ public class PanelPrincipal extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void opcion_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcion_1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAspirante;
-    private javax.swing.JButton botonCohorte;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton opcion_1;
     private javax.swing.JPanel panelDer;
     private javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
-    private PanelLogin panelLogin;
-    private PanelAspirante panelAspirante;
-    private PanelCohorte panelCohorte;
-
-    
+    private PanelLogin panelLogin;  
+    private FactoryIF fabricaPaneles;
     private VentanaPrincipal framePadre;
     
-    
-//    public void setDatos(Vector datos){
-//        Datos=datos;
-//    }
     /**
      * Nombre: actualizarPaneDer
      * Proposito: Metodo que actualiza el contenido del panelDer
@@ -152,7 +154,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
     private void asignarEventos(EventosPanelPrincipal events) {
         botonLogin.addActionListener(events);
         botonAspirante.addActionListener(events);
-        botonCohorte.addActionListener(events);
+        opcion_1.addActionListener(events);
     } // Fin del metodo asignarEventos
     
     private class EventosPanelPrincipal implements ActionListener{
@@ -161,12 +163,12 @@ public class PanelPrincipal extends javax.swing.JPanel {
             if (e.getSource() == botonLogin) {
                 actualizarPaneDer(panelLogin);
             }
-            if (e.getSource() == botonAspirante){
-                actualizarPaneDer(panelAspirante);            
+            if (e.getSource() == botonAspirante){                
+                actualizarPaneDer(fabricaPaneles.createProduct("Aspirante"));            
             }
-            if (e.getSource() == botonCohorte){
+            if (e.getSource() == opcion_1){
               
-                actualizarPaneDer(panelCohorte);
+                //actualizarPaneDer(panelCohorte);
                 
             }
         }

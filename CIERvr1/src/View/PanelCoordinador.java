@@ -7,8 +7,16 @@
  */
 package View;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +30,7 @@ public class PanelCoordinador extends javax.swing.JPanel {
      */
     public PanelCoordinador() {
         initComponents();       
-
+        addMenu();
         // Componentes
 
         // Eventos
@@ -40,30 +48,9 @@ public class PanelCoordinador extends javax.swing.JPanel {
     private void initComponents() {
 
         panelIzq = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         panelDer = new javax.swing.JPanel();
 
         panelIzq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel1.setText("PANEL COOR");
-
-        javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
-        panelIzq.setLayout(panelIzqLayout);
-        panelIzqLayout.setHorizontalGroup(
-            panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIzqLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        panelIzqLayout.setVerticalGroup(
-            panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIzqLayout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         panelDer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -72,28 +59,49 @@ public class PanelCoordinador extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelIzq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDer, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panelDer, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelDer, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel panelDer;
     private javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
+    // PANELES 
+    
 
-
-    /**
+    // MENU
+    private JMenuBar barraLateral;  
+    private JMenu menuLeaderTeacher;// LeaderTeacher
+    private JMenuItem itemCrear; // LeaderTeacher
+    private JMenuItem itemModificar; // LeaderTeacher
+    private JMenuItem itemBuscar; // LeaderTeacher
+    private JMenuItem itemEliminar; // LeaderTeacher    
+    private JMenu menuCohorte; // Cohorte   
+    private JMenuItem itemProgramar; // Cohorte    
+    private JMenu menuCertificados; // Certificados 
+    private JMenuItem itemGenerar; // Certificados    
+    private JMenu menuReportes; // Reportes
+    private JMenuItem itemReport1; // Reportes
+    private JMenuItem itemReport2; // Reportes
+    private JMenuItem itemReport3; // Reportes
+    private JMenuItem itemReport4; // Reportes
+    private JMenuItem itemReport5; // Reportes
+    private JMenuItem itemReport6; // Reportes
+    private JMenuItem itemReport7; // Reportes
+    private JMenuItem itemReport8; // Reportes        
+    /**|
      * Nombre: actualizarPaneDer
      * Proposito: Metodo que actualiza el contenido del panelDer
      * @param panelNuevo 
@@ -105,13 +113,142 @@ public class PanelCoordinador extends javax.swing.JPanel {
         panelDer.updateUI();
     } // Fin del metodo actualizarPaneDer
     
-    private void asignarEventos(EventosPanelCoordinador events) {      
+    private void addImage(){
+        JLabel labelImagne = new JLabel();
+        ImageIcon img = new ImageIcon(getClass().getResource("/View/Image/Logounivalle.png"));
+        labelImagne.setIcon(img);
+        panelIzq.add(labelImagne);
+    } // Fin del metodo addImage
+    
+    private void addMenu(){     
+        addImage();        
+        JPanel panelTemporal = new JPanel();
+        panelTemporal.setBorder(BorderFactory.createEmptyBorder(20, 0, 50, 0));                        
+        barraLateral = new JMenuBar();
+        barraLateral.setLayout(new GridLayout(4, 1));
+
+        // Menu de Leader Teacher        
+        menuLeaderTeacher = new JMenu("Leader Teacher");
+        menuLeaderTeacher.setPreferredSize(new Dimension(180, 50));
+        menuLeaderTeacher.setMenuLocation(180, 0);
+        // Components
+        itemCrear = new JMenuItem("Crear");
+        itemModificar = new JMenuItem("Modificar");
+        itemBuscar = new JMenuItem("Buscar");
+        itemEliminar = new JMenuItem("Eliminar");
+        // Add Components
+        menuLeaderTeacher.add(itemCrear);
+        menuLeaderTeacher.add(itemModificar);
+        menuLeaderTeacher.add(itemBuscar);
+        menuLeaderTeacher.add(itemEliminar);
         
+        // Menu de Cohorte
+        menuCohorte = new JMenu("Cohorte");
+        menuCohorte.setMenuLocation(180, 0);
+        // Components
+        itemProgramar = new JMenuItem("Programar");
+        // Add Components
+        menuCohorte.add(itemProgramar);
+        
+        // Menu Certificados
+        menuCertificados = new JMenu("Certificados");
+        menuCertificados.setMenuLocation(180, 0);
+        // Components
+        itemGenerar = new JMenuItem("Generar");
+        // Add Components
+        menuCertificados.add(itemGenerar);
+        
+        // Menu Reportes
+        menuReportes = new JMenu("Reportes");
+        menuReportes.setMenuLocation(180, 0);
+        // Components
+        itemReport1 = new JMenuItem("Reporte 1");
+        itemReport2 = new JMenuItem("Reporte 2");
+        itemReport3 = new JMenuItem("Reporte 3");
+        itemReport4 = new JMenuItem("Reporte 4");
+        itemReport5 = new JMenuItem("Reporte 5");
+        itemReport6 = new JMenuItem("Reporte 6");
+        itemReport7 = new JMenuItem("Reporte 7");
+        itemReport8 = new JMenuItem("Reporte 8");
+        
+        // Add Components
+        menuReportes.add(itemReport1);
+        menuReportes.add(itemReport2);
+        menuReportes.add(itemReport3);
+        menuReportes.add(itemReport4);
+        menuReportes.add(itemReport5);
+        menuReportes.add(itemReport6);
+        menuReportes.add(itemReport7);
+        menuReportes.add(itemReport8);
+                
+        // Add elements to JMenu
+        barraLateral.add(menuLeaderTeacher);
+        barraLateral.add(menuCohorte);
+        barraLateral.add(menuCertificados);
+        barraLateral.add(menuReportes);
+        
+        // Add to JPanel
+        panelTemporal.add(barraLateral);
+        panelIzq.add(panelTemporal);
+        
+    } // Fin del metodo addMenu
+    
+    private void asignarEventos(EventosPanelCoordinador events) {    
+        // Menu de Leader Teacher
+        itemCrear.addActionListener(events);
+        itemModificar.addActionListener(events);
+        itemBuscar.addActionListener(events);
+        itemEliminar.addActionListener(events);  
+        // Menu de Cohorte
+        itemProgramar.addActionListener(events);
+        // Menu Certificados
+        itemGenerar.addActionListener(events);
+        // Menu Reportes
+        itemReport1.addActionListener(events);
+        itemReport2.addActionListener(events);
+        itemReport3.addActionListener(events);
+        itemReport4.addActionListener(events);
+        itemReport5.addActionListener(events);
+        itemReport6.addActionListener(events);
+        itemReport7.addActionListener(events);
+        itemReport8.addActionListener(events);        
     } // Fin del metodo asignarEventos
     
     private class EventosPanelCoordinador implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Menu de Leader Teacher
+            if (e.getSource() == itemCrear) {
+            }
+            if (e.getSource() == itemModificar) {            
+            }
+            if (e.getSource() == itemBuscar) {            
+            }
+            if (e.getSource() == itemEliminar) {            
+            }
+            // Menu de Cohorte
+            if (e.getSource() == itemProgramar) {            
+            }
+            // Menu Certificados
+            if (e.getSource() == itemGenerar) {            
+            }
+            // Menu Reportes
+            if (e.getSource() == itemReport1) {            
+            }
+            if (e.getSource() == itemReport2) {            
+            }
+            if (e.getSource() == itemReport3) {            
+            }
+            if (e.getSource() == itemReport4) {            
+            }
+            if (e.getSource() == itemReport5) {            
+            }
+            if (e.getSource() == itemReport6) {            
+            }
+            if (e.getSource() == itemReport7) {            
+            }
+            if (e.getSource() == itemReport8) {            
+            }                         
         }
     } // Fin de la clase EventosPanelPrincipal
 

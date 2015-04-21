@@ -1,5 +1,5 @@
 /** 
- * Nombre del Archivo: PanelLT.java
+ * Nombre del Archivo: PanelCoordinador.java
  * Autores: JULIAN GARCIA RICO (1225435) 
  *          DIEGO FERNANDO BEDOYA (1327749) 
  *          CRISTIAN ALEXANDER VALENCIA TORRES (1329454) 
@@ -7,8 +7,16 @@
  */
 package View;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
@@ -22,12 +30,11 @@ public class PanelLT extends javax.swing.JPanel {
      */
     public PanelLT() {
         initComponents();       
-        
+        addMenu();
         // Componentes
-        
-        
+
         // Eventos
-        EventosPanelLt events = new EventosPanelLt();
+        EventosPanelAdministrador events = new EventosPanelAdministrador();
         asignarEventos(events);
     }
 
@@ -41,30 +48,9 @@ public class PanelLT extends javax.swing.JPanel {
     private void initComponents() {
 
         panelIzq = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         panelDer = new javax.swing.JPanel();
 
         panelIzq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel1.setText("PANEL LT");
-
-        javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
-        panelIzq.setLayout(panelIzqLayout);
-        panelIzqLayout.setHorizontalGroup(
-            panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIzqLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
-        panelIzqLayout.setVerticalGroup(
-            panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIzqLayout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         panelDer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -73,28 +59,34 @@ public class PanelLT extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelIzq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDer, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panelDer, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelDer, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel panelDer;
     private javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
+    // PANELES 
+    
 
-
-    /**
+    // MENU
+    private JMenuBar barraLateral;  
+    private JMenu menuConsultarCalif;// ConsultarCalificaciones
+    private JMenuItem itemConsultarCalif; // ConsultarCalificaciones
+     
+    /**|
      * Nombre: actualizarPaneDer
      * Proposito: Metodo que actualiza el contenido del panelDer
      * @param panelNuevo 
@@ -106,13 +98,49 @@ public class PanelLT extends javax.swing.JPanel {
         panelDer.updateUI();
     } // Fin del metodo actualizarPaneDer
     
-    private void asignarEventos(EventosPanelLt events) {      
+    private void addImage(){
+        JLabel labelImagne = new JLabel();
+        ImageIcon img = new ImageIcon(getClass().getResource("/View/Image/Logounivalle.png"));
+        labelImagne.setIcon(img);
+        panelIzq.add(labelImagne);
+    } // Fin del metodo addImage
+    
+    private void addMenu() {
+        addImage();
+        JPanel panelTemporal = new JPanel();
+        panelTemporal.setBorder(BorderFactory.createEmptyBorder(20, 0, 50, 0));
+        barraLateral = new JMenuBar();
+        barraLateral.setLayout(new GridLayout(1, 1));
+
+        // Menu ConsultarCalificaciones
+        menuConsultarCalif = new JMenu("Calificaciones");
+        menuConsultarCalif.setPreferredSize(new Dimension(180, 50));
+        menuConsultarCalif.setMenuLocation(180, 0);
+        // Components
+        itemConsultarCalif = new JMenuItem("Consultar"); // ConsultarCalificaciones
+        // Add Components
+        menuConsultarCalif.add(itemConsultarCalif);
+               
+        // Add elements to JMenu
+        barraLateral.add(menuConsultarCalif);
         
+        // Add to JPanel
+        panelTemporal.add(barraLateral);
+        panelIzq.add(panelTemporal);
+        
+    } // Fin del metodo addMenu
+    
+    private void asignarEventos(EventosPanelAdministrador events) {  
+        // Menu ConsultarCalificaciones
+        itemConsultarCalif.addActionListener(events);               
     } // Fin del metodo asignarEventos
     
-    private class EventosPanelLt implements ActionListener{
+    private class EventosPanelAdministrador implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Menu ConsultarCalificaciones
+            if (e.getSource() == itemConsultarCalif) {
+            }      
         }
     } // Fin de la clase EventosPanelPrincipal
 

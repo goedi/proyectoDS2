@@ -9,8 +9,6 @@ package Controllers;
 
 import Logica.Sesion;
 
-
-
 /**
  *
  * @author oscar
@@ -25,7 +23,7 @@ public class ControladorSesion {
          * y si esta retorna un null
          */
         nuevaSesion = Sesion.getInstance(usuario, contrasena);
-        nuevaSesion.setTipo("Administrador");
+        // nuevaSesion.setTipo("Administrador");
         return nuevaSesion;
     } // Fin del metodo login
     

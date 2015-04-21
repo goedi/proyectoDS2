@@ -7,11 +7,6 @@
  */
 package View;
 
-import Logica.Curso;
-import Logica.FaseCurso;
-import Logica.FasePractica;
-import Logica.Usuario;
-import Patrones.Item;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -19,9 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.util.ArrayList;
 import javax.swing.*;
-import Logica.*;
+import java.awt.Color;
 /**
  * Nombre Clase:
  * Funcion: 
@@ -34,12 +28,6 @@ public class VentanaPrincipal extends JFrame {
     private JPanel panelInferior;
     private PanelPrincipal panelPrincipal;
     private JButton botonCerrar;
-    
-    // ATRIBUTO TEMPORALES SOLO PARA TERCERA ENTRAGA DE PATRONES DE 
-    public static Curso objCurso = new Curso(); 
-   
-    public static ArrayList <Usuario> listUsuario = new ArrayList<Usuario>();
-   
     /*
       Nombre: Ventana
       Proposito: Constructor de la clase, en el se asignan las caracteristicas
@@ -78,11 +66,22 @@ public class VentanaPrincipal extends JFrame {
     
     
     private void panelSuperior(){
-        panelSuperior = new JPanel(new FlowLayout());
-        // Components   
+        panelSuperior = new JPanel(new BorderLayout());
+        panelSuperior.setBackground(Color.WHITE);
+        // Components 
+        JLabel labelImagne = new JLabel();
+        ImageIcon img = new ImageIcon(getClass().getResource("/View/Image/Logo_cier-sur.jpg"));
+        labelImagne.setIcon(img);
+        JPanel panelTemporal = new JPanel();
+        panelTemporal.setBackground(Color.WHITE);
+        panelTemporal.setBorder(BorderFactory.createEmptyBorder(90, 0, 0,0));
         botonCerrar = new JButton("Cerrar Sesión");
-        // Add Components     
-        panelSuperior.add(botonCerrar);
+        botonCerrar.setEnabled(false);
+        botonCerrar.setBackground(Color.WHITE);
+        panelTemporal.add(botonCerrar);
+        // Add Components 
+        panelSuperior.add(labelImagne, BorderLayout.WEST);
+        panelSuperior.add(panelTemporal, BorderLayout.EAST);
     } // Fin del metodo panelSuperior
     
     
@@ -101,6 +100,7 @@ public class VentanaPrincipal extends JFrame {
      * @param panelNuevo 
      */
     public void actualizarPanelInferior(JPanel panelNuevo){
+        botonCerrar.setEnabled(true);
         panelInferior.removeAll();
         panelInferior.add(panelNuevo);
         panelInferior.repaint();
@@ -137,8 +137,10 @@ public class VentanaPrincipal extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == botonCerrar){
+            // EN ESTE SE DEBE ACTULIZAR EL VALOR DE LA SESION EN LA BASE DE DATOS                   
                 panelPrincipal = new PanelPrincipal(VentanaPrincipal.this);
                 actualizarPanelInferior(panelPrincipal);
+                botonCerrar.setEnabled(false);
             }
         }
 
@@ -148,24 +150,7 @@ public class VentanaPrincipal extends JFrame {
 
         @Override
         public void windowClosing(WindowEvent e) {
-            
-            //SOLO PARA TERCERA ENTRAGA DE PATRONES DE DISEÑO            
-            Curso curso = VentanaPrincipal.objCurso;
-            ArrayList <Item> listFasesCurso = curso.getListFases();
-            System.out.println("LISTA DE FASES");
-            for (int x = 0; x <  listFasesCurso.size(); x ++) {
-                FaseCurso faseCurso = (FaseCurso)listFasesCurso.get(x);
-                ArrayList <Item> listaPractica = faseCurso.getListPracticas();
-                System.out.println("Codigo Fase:" + faseCurso.getCodigoFase());
-                System.out.println("Lista de Practicas");
-                for (int y = 0; y < listaPractica.size(); y++) {
-                    FasePractica fasePractica = (FasePractica) listaPractica.get(y);
-                    System.out.println("Codigo Practica " + fasePractica.getCodigoPractica());
-                }
-            }
-            
-            //SOLO PARA TERCERA ENTRAGA DE PATRONES DE DISEÑO   
-            System.out.println("Cantidad de Objetos Sesion Creados-> " + Sesion.cantObjetoSesion);
+            // EN ESTE SE DEBE ACTULIZAR EL VALOR DE LA SESION EN LA BASE DE DATOS
         }        
         @Override
         public void windowClosed(WindowEvent e) {

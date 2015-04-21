@@ -14,12 +14,12 @@ import java.awt.event.ActionListener;
  *
  * @author oscar
  */
-public class PanelAspirante extends javax.swing.JPanel {
+public class PANEL_BASE_NO_BORRAR extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelLogin
      */
-    public PanelAspirante() {
+    public PANEL_BASE_NO_BORRAR() {
         initComponents();
 
         
@@ -43,7 +43,7 @@ public class PanelAspirante extends javax.swing.JPanel {
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(750, 505));
 
-        jLabel1.setText("ASPIRANTE");
+        jLabel1.setText("REPORTES");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -52,7 +52,7 @@ public class PanelAspirante extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(291, 291, 291)
                 .addComponent(jLabel1)
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
